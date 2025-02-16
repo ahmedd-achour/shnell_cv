@@ -1,0 +1,59 @@
+<body>
+  <div class="cv-container" *ngIf="cvData">
+      <div class="left-column">
+          <img [src]="cvData.photo" alt="Profile Photo" class="profile-photo">
+          <div class="name-title">
+              <h1>{{ cvData.name }}</h1>
+              <h2>{{ cvData.title }}</h2>
+          </div>
+          <section class="contact-info">
+              <h3>Contact</h3>
+              <p>Email: {{ cvData.email }}</p>
+              <p>Phone: {{ cvData.phone }}</p>
+              <p>Address: {{ cvData.address }}</p>
+          </section>
+          <section class="education">
+              <h3>Education</h3>
+              <ul>
+                  <li *ngFor="let edu of cvData.education">
+                      <h4>{{ edu.degree }}</h4>
+                      <p>{{ edu.institution }} - {{ edu.date }}</p>
+                  </li>
+              </ul>
+          </section>
+          <section class="languages">
+              <h3>Languages</h3>
+              <ul>
+                  <li *ngFor="let language of cvData.languages">{{ language }}</li>
+              </ul>
+          </section>
+      </div>
+      <div class="right-column">
+          <section class="profile">
+              <h3>About Me</h3>
+              <p>{{ cvData.presentation }}</p>
+          </section>
+          <section class="experience">
+              <h3>Work Experience</h3>
+              <div *ngFor="let exp of cvData.experiences">
+                  <h4>{{ exp.title }} - {{ exp.company }}</h4>
+                  <p>{{ exp.date }}</p>
+                  <p>{{ exp.description }}</p>
+              </div>
+          </section>
+          <section class="skills">
+              <h3>Skills</h3>
+              <ul>
+                  <li *ngFor="let skill of cvData.skills">{{ skill }}</li>
+              </ul>
+          </section>
+
+          <section class="hobbies">
+              <h3>Hobbies</h3>
+              <ul>
+                  <li *ngFor="let hobby of cvData.hobbies">{{ hobby }}</li>
+              </ul>
+          </section>
+      </div>
+  </div>
+</body>

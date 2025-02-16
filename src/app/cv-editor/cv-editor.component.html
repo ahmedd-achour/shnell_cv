@@ -1,0 +1,141 @@
+<div class="cv-editor-container">
+  <h2>Edit Your CV</h2>
+
+  <form [formGroup]="cvForm" (ngSubmit)="onSubmit()">
+    <div class="cv-editor-container">
+      <!-- Personal Information -->
+      <div class="section">
+        <h3>Personal Information</h3>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" formControlName="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="jobTitle">Job Title</label>
+          <input id="jobTitle" formControlName="jobTitle" placeholder="Enter your job title">
+        </div>
+        <div class="form-group">
+          <label for="photo">Profile Photo URL</label>
+          <input id="photo" formControlName="photo" placeholder="Enter the photo URL">
+        </div>
+        <div class="form-group">
+          <label for="headerColor">Header Color</label>
+          <input id="headerColor" formControlName="headerColor" type="color">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" type="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input id="phone" formControlName="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input id="address" formControlName="address" placeholder="Enter your address">
+        </div>
+      </div>
+
+      <!-- Skills and Hobbies -->
+      <div class="section">
+        <h3>Skills & Hobbies</h3>
+        <div class="form-group">
+          <label for="skills">Skills</label>
+          <textarea id="skills" formControlName="skills" placeholder="Enter your skills"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="hobbies">Hobbies</label>
+          <textarea id="hobbies" formControlName="hobbies" placeholder="Enter your hobbies"></textarea>
+        </div>
+      </div>
+
+      <!-- Profile Description -->
+      <div class="section">
+        <h3>Profile Description</h3>
+        <div class="form-group">
+          <textarea id="profileDescription" formControlName="profileDescription" placeholder="Tell us about yourself"></textarea>
+        </div>
+      </div>
+
+      <!-- Experiences -->
+      <div class="section">
+        <h3>Work Experience</h3>
+        <div formArrayName="experiences">
+          <div *ngFor="let experience of experiences.controls; let i = index" [formGroupName]="i">
+            <div class="form-group">
+              <label for="position">Position</label>
+              <input id="position" formControlName="position" placeholder="Enter your position">
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input id="company" formControlName="company" placeholder="Enter your company">
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input id="date" formControlName="date" placeholder="Enter date of employment">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" formControlName="description" placeholder="Enter your job description"></textarea>
+            </div>
+          </div>
+        </div>
+        <button type="button" [disabled]="!isExperienceValid" (click)="addExperience()">Add Experience</button>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <h3>Education</h3>
+        <div formArrayName="education">
+          <div *ngFor="let edu of education.controls; let i = index" [formGroupName]="i">
+            <div class="form-group">
+              <label for="degree">Degree</label>
+              <input id="degree" formControlName="degree" placeholder="Enter your degree">
+            </div>
+            <div class="form-group">
+              <label for="institution">Institution</label>
+              <input id="institution" formControlName="institution" placeholder="Enter your institution">
+            </div>
+            <div class="form-group">
+              <label for="year">Year</label>
+              <input id="year" formControlName="year" placeholder="Enter graduation year">
+            </div>
+          </div>
+        </div>
+        <button type="button" [disabled]="!cvForm.valid" (click)="addEducation()">Add Education</button>
+      </div>
+
+      <!-- Social Links -->
+      <div class="section">
+        <h3>Social Media</h3>
+        <div class="form-group">
+          <label for="github">GitHub</label>
+          <input id="github" formControlName="github" placeholder="Enter your GitHub link">
+        </div>
+        <div class="form-group">
+          <label for="facebook">Facebook</label>
+          <input id="facebook" formControlName="facebook" placeholder="Enter your Facebook link">
+        </div>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn</label>
+          <input id="linkedin" formControlName="linkedin" placeholder="Enter your LinkedIn link">
+        </div>
+        <div class="form-group">
+          <label for="instagram">Instagram</label>
+          <input id="instagram" formControlName="instagram" placeholder="Enter your Instagram link">
+        </div>
+        <div class="form-group">
+          <label for="web">Website</label>
+          <input id="web" formControlName="web" placeholder="Enter your website link">
+        </div>
+      </div>
+
+      <!-- Submit and Preview Button -->
+      <div class="action-buttons">
+        <button type="submit" [disabled]="cvForm.invalid">Submit</button>
+        <button type="button" (click)="onPreview()">Preview</button>
+      </div>
+    </div>
+  </form>
+
+</div>
