@@ -1,0 +1,106 @@
+/* styles.css */
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f9f9f900; /* Light background */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Darker heading color */
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: white; /* White section backgrounds */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter section shadows */
+}
+
+.section h2,
+.section h3 {
+  margin-bottom: 10px;
+  color: #555; /* Slightly darker section heading */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="color"],
+textarea {
+  width: calc(100% - 22px);
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px; /* Increased font size */
+}
+
+textarea {
+  height: 120px; /* Increased textarea height */
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+.button2 {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #ff0000; /* Primary button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker hover color */
+}
+
+button:disabled {
+  background-color: #ccc; /* Grayed out disabled button */
+  cursor: default;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 10px; /* Reduced padding */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="color"],
+  textarea,
+  button {
+    font-size: 14px; /* Slightly smaller font on mobile */
+  }
+}
+
+/* Gold/Silver Gradient (Example - Customize as needed) */
+.container {
+  background: linear-gradient(to bottom, #ffd700, #c0c0c0); /* Gold to silver */
+}
+
+.section {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white sections */
+}

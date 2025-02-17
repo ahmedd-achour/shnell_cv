@@ -13,6 +13,7 @@ import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvEditorComponent } from './cv-editor/cv-editor.component';
+import { Model4Component } from './model4/model4.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CvEditorComponent } from './cv-editor/cv-editor.component';
     Model3Component,
     HomeComponent,
     CvEditorComponent,
+    Model4Component,
   ],
   imports: [
     BrowserModule,

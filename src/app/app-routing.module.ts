@@ -5,27 +5,29 @@ import { Model2Component } from './model-2/model-2.component';
 import { Model3Component } from './model-3/model-3.component';
 import { HomeComponent } from './home/home.component';
 import { CvEditorComponent } from './cv-editor/cv-editor.component';
+import { Model4Component } from './model4/model4.component';
 
 const routes: Routes = [
   {
-    path: "model_1/:idref",  // Dynamic route with idref
+    path: "1/:idref",  // Dynamic route with idref
     component: Model1Component
   },
   {
-    path: "model_2/:idref",
+    path : "create" , component: Model4Component
+  },
+  {
+    path: "2/:idref",
     component: Model2Component
   },
   {
-    path: "model_3/:idref",
+    path: "3/:idref",
     component: Model3Component
   },
-  {
-path: "edit" , component: CvEditorComponent
-  },
+
   {
     path: "",
-    component: HomeComponent,
-    pathMatch: 'full'
+    component: HomeComponent, pathMatch: 'full'
+
   }
 ];
 

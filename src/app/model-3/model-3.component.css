@@ -1,171 +1,196 @@
-/* Model 3 CV Styling */
+/* style.css */
 body {
-  font-family: 'Arial', sans-serif; /* Changed font for a fresh look */
-  background-color: #f4f4f9; /* Light background color for a soft feel */
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align items at the top */
-  min-height: 100vh;
-  color: #333; /* Darker text color */
+  background-color: #f8f9fa;
+  line-height: 1.6;
 }
 
 .cv-container {
-  width: 100%; /* Full-width container */
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  border-radius: 15px;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Adjusted ratio for columns */
-  padding: 30px;
-  margin: 20px; /* Margin for spacing */
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
 }
 
-/* Left Column (Profile & Contact) */
 .left-column {
-  background: #ffffff; /* White background for the left column */
-  color: #333;
-  padding: 30px; /* Padding adjusted */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
+  width: 30%;
+  background: #f0f8ff;
+  padding: 2rem;
+  border-left: 4px solid #0088cc;
+  color: #2c3e50;
 }
 
 .profile-photo {
-  width: 150px; /* Adjusted photo size */
-  height: 150px;
+  width: 120px;
   border-radius: 50%;
-  border: 4px solid #ddd; /* Light border */
-  margin-bottom: 20px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 3px solid #0088cc;
+  display: block;
+  margin: 0 auto 1rem;
 }
 
-.contact-info {
-  margin-top: 20px;
+.name-title {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.contact-info p {
-  margin: 8px 0;
-  font-size: 1.1em;
-  color: #444; /* Slightly darker text */
+.name-title h1 {
+  font-size: 1.8rem;
+  color: #0088cc;
+  margin-bottom: 0.5rem;
 }
 
-.contact-info h3 {
-  font-size: 1.5em;
-  color: #333;
-  border-bottom: 2px solid #8e8e8e; /* Light border */
-  padding-bottom: 8px;
+.name-title h2 {
+  font-size: 1.2rem;
+  color: #555;
 }
 
-.contact-info a {
-  text-decoration: none;
-  color: #0073e6; /* Blue links */
-  font-weight: 500;
-}
-
-.contact-info a:hover {
-  color: #0056b3; /* Darker blue on hover */
-}
-
-/* Right Column (Main Content) */
-.right-column {
-  padding: 30px;
-  background-color: #fff;
-}
-
-.header {
-  background-color: #4a4a4a;
-  padding: 25px;
-  text-align: left;
-  font-size: 2.2em;
-  font-weight: 600;
-  color: #fff;
+.left-column section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
-  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-section {
-  margin-top: 30px;
+.left-column h3 {
+  color: #0088cc;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #0088cc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-h3 {
-  font-size: 1.6em;
-  color: #4a4a4a; /* Darker header color */
-  border-bottom: 2px solid #4a90e2; /* Blue accent */
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+.left-column ul {
+  padding-left: 1.2rem;
 }
 
-/* List styling */
-ul,
-ol {
-  list-style-type: none;
-  padding-left: 20px;
+.left-column ul li {
+  margin-bottom: 0.8rem;
 }
 
-li {
-  background: #f9f9f9;
-  padding: 12px 20px;
-  margin: 10px 0;
-  border-radius: 8px;
-  font-size: 1.1em;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
+.right-column {
+  width: 70%;
+  padding: 2rem;
+  color: #34495e;
 }
 
-li:hover {
-  background-color: #f1f1f1;
-  transform: translateY(-5px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.right-column h3 {
+  color: #0088cc;
+  border-bottom: 2px solid #0088cc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
-/* Skills & Experience */
-.skills,
-.experience,
-.hobbies {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.right-column ul {
+  padding-left: 1.2rem;
 }
 
-.skills h3,
-.experience h3,
-.hobbies h3 {
-  color: #4a90e2; /* Blue headings */
+.right-column ul li {
+  margin-bottom: 0.8rem;
 }
 
-.skills ul,
-.experience div {
-  margin-left: 15px;
+.right-column .experience h4 {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.skills li,
-.experience div {
-  margin-bottom: 10px;
+.right-column .experience p {
+  margin-bottom: 1rem;
 }
 
-/* Media Queries */
-@media (max-width: 900px) {
+/* Media Queries for Responsiveness */
+
+/* For tablets and below */
+@media (max-width: 768px) {
   .cv-container {
-    grid-template-columns: 1fr;
-    padding: 20px;
+    flex-direction: column;
+    margin: 1rem;
+    border-radius: 10px;
   }
 
-  .left-column,
-  .right-column {
+  .left-column, .right-column {
     width: 100%;
+    padding: 1.5rem;
+  }
+
+  .left-column {
+    border-left: none;
+    border-top: 4px solid #0088cc;
+    border-radius: 10px 10px 0 0;
   }
 
   .profile-photo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
   }
 
-  .header {
-    text-align: center;
+  .name-title h1 {
+    font-size: 1.6rem; /* Slightly smaller font for small screens */
+  }
+
+  .name-title h2 {
+    font-size: 1rem; /* Reduced font size */
+  }
+
+  .left-column h3, .right-column h3 {
+    font-size: 1.3rem; /* Reduced heading size */
+  }
+
+  .left-column ul li, .right-column ul li {
+    font-size: 1rem; /* Reduced font size for list items */
+  }
+
+  .right-column .experience h4 {
+    font-size: 1rem; /* Reduced font size */
+  }
+
+  .right-column .experience p {
+    font-size: 0.95rem; /* Slightly smaller experience paragraph */
+  }
+}
+
+/* For mobile phones (small screens) */
+@media (max-width: 480px) {
+  .cv-container {
+    margin: 0; /* Ensures no margin at all on very small screens */
+    padding: 0.5rem; /* Small padding */
+  }
+
+  .left-column, .right-column {
+    padding: 1rem; /* Reduced padding */
+  }
+
+  .profile-photo {
+    width: 80px; /* Smaller profile photo */
+  }
+
+  .name-title h1 {
+    font-size: 1.4rem; /* Even smaller font for the name */
+  }
+
+  .name-title h2 {
+    font-size: 0.9rem; /* Smaller font for title */
+  }
+
+  .left-column h3, .right-column h3 {
+    font-size: 1.2rem; /* Reduced heading size */
+  }
+
+  .left-column ul li, .right-column ul li {
+    font-size: 0.95rem; /* Smaller font size for list items */
+  }
+
+  .right-column .experience h4 {
+    font-size: 1rem; /* Reduced experience heading size */
+  }
+
+  .right-column .experience p {
+    font-size: 0.9rem; /* Smaller paragraph font size */
   }
 }

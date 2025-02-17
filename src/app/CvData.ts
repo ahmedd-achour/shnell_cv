@@ -16,15 +16,15 @@ export interface CvData {
   name: string;
   jobTitle: string;
   photo: string;
-  headerColor: string;
   email: string;
   phone: string;
   address: string;
-  skills: string;
-  hobbies: string;
+  skills: string[];
+  hobbies: string[];
   profileDescription: string;
   experiences: Experience[];
   education: Education[];
+  language : string[];
   github: string;
   facebook: string;
   linkedin: string;

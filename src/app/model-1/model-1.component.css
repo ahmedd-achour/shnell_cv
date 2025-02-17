@@ -12,13 +12,16 @@ body {
 }
 
 .cv-container {
-  width: 90%; /* Wider container */
+  width: 100%; /* Ensure full width */
+  max-width: 1200px; /* Limit max width to avoid overflow on large screens */
   background: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
   border-radius: 15px; /* Slightly more rounded corners */
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 2fr; /* 1:2 ratio for left/right columns */
+  padding: 20px; /* Padding around the container */
+  margin: 0 auto; /* Ensure it’s centered */
 }
 
 /* Left Column (Profile & Contact) */
@@ -41,6 +44,7 @@ body {
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow on the image */
 }
+
 .contact-info p {
   display: flex;
   align-items: center;
@@ -63,7 +67,6 @@ body {
 .contact-info a:hover {
   color: #0056b3;
 }
-
 
 .profile-photo:hover {
   transform: scale(1.05);
@@ -143,24 +146,108 @@ li:hover {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 }
 
-@media (max-width: 900px) { /* Adjusted breakpoint */
+/* Media Queries for Responsiveness */
+
+/* Adjusted breakpoint for tablets and below (900px) */
+@media (max-width: 900px) {
   .cv-container {
-      grid-template-columns: 1fr;
-      flex-direction: column;
+    grid-template-columns: 1fr; /* Stacks columns vertically */
+    padding: 10px; /* Adjusted padding */
+    margin: 0 20px; /* Center and add margin to sides */
   }
 
   .left-column,
   .right-column {
-      width: 100%;
-      text-align: left;
+    width: 100%;
+    text-align: left;
   }
 
   .profile-photo {
-      width: 160px;
-      height: 160px;
+    width: 160px; /* Slightly smaller profile photo */
+    height: 160px;
   }
 
   .header {
-      text-align: center;
+    text-align: center;
+  }
+
+  .contact-info h3,
+  .skills h3,
+  .hobbies h3 {
+    font-size: 1.3em; /* Smaller section heading font size */
+  }
+
+  section {
+    margin-top: 20px; /* Slightly reduced margin */
+  }
+
+  li {
+    font-size: 1.1em; /* Slightly smaller list item font */
+  }
+}
+
+/* Smaller screens (phones) */
+@media (max-width: 600px) {
+  .cv-container {
+    width: 100%; /* Ensure container fits screen */
+    padding: 5px; /* Reduced padding for phones */
+    margin: 0 auto; /* Ensure container is centered */
+  }
+
+  .left-column {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .right-column {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .profile-photo {
+    width: 140px; /* Even smaller profile photo */
+    height: 140px;
+  }
+
+  .header {
+    font-size: 1.8em; /* Smaller header size */
+    padding: 15px; /* Reduced padding */
+  }
+
+  h3 {
+    font-size: 1.4em; /* Smaller heading font size */
+  }
+
+  li {
+    font-size: 1.1em; /* Smaller font size for list items */
+  }
+}
+
+/* Very small screens (portrait phones) */
+@media (max-width: 480px) {
+  .cv-container {
+    width: 100%; /* Ensure container fits on small screens */
+    padding: 10px; /* Minimized padding */
+    margin: 0 auto; /* Center the content */
+  }
+
+  .left-column,
+  .right-column {
+    padding: 10px; /* Minimized padding */
+  }
+
+  .profile-photo {
+    width: 120px; /* Smaller profile photo */
+    height: 120px;
+  }
+
+  .header {
+    font-size: 1.5em; /* Even smaller header size */
+  }
+
+  h3 {
+    font-size: 1.2em; /* Reduced font size for section headings */
+  }
+
+  li {
+    font-size: 1em; /* Smaller list item font */
   }
 }

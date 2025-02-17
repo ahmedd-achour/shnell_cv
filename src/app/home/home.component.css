@@ -113,6 +113,7 @@ body {
 .model:hover p {
   color: silver;
 }
+
 .contact-container {
   display: flex;
   justify-content: center;
@@ -136,4 +137,106 @@ body {
 .contact-btn:hover {
   background-color: #218838;
   transform: scale(1.05);
+}
+
+/* Responsive Design */
+
+/* Adjust font sizes and layout for smaller devices (tablets and below) */
+@media (max-width: 1024px) {
+  .welcome-screen h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-screen p {
+    font-size: 1.3rem;
+  }
+
+  .cv-models h2 {
+    font-size: 2rem;
+  }
+
+  .cv-models p {
+    font-size: 1.2rem;
+  }
+
+  .model-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+
+  .model {
+    height: 300px; /* Slightly reduced height for better fit */
+  }
+
+  .model img {
+    max-height: 160px; /* Smaller image size for tablets */
+  }
+}
+
+/* Adjust for mobile (phones and smaller tablets) */
+@media (max-width: 768px) {
+  .welcome-screen {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .welcome-screen h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-screen p {
+    font-size: 1.1rem;
+  }
+
+  .cv-models h2 {
+    font-size: 1.8rem;
+  }
+
+  .cv-models p {
+    font-size: 1.1rem;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 20px;
+  }
+
+  .model {
+    height: 280px; /* Adjusted height for mobile */
+  }
+
+  .model img {
+    max-height: 140px; /* Adjusted image size for mobile */
+  }
+
+  .contact-btn {
+    font-size: 1.3rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Extra small mobile (portrait phones) */
+@media (max-width: 480px) {
+  .welcome-screen h1 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-screen p {
+    font-size: 1rem;
+  }
+
+  .cv-models h2 {
+    font-size: 1.6rem;
+  }
+
+  .cv-models p {
+    font-size: 1rem;
+  }
+
+  .model {
+    height: 250px; /* More compact model size */
+  }
+
+  .model img {
+    max-height: 120px; /* Smaller images on very small screens */
+  }
 }

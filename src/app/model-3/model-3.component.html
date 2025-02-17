@@ -11,6 +11,25 @@
               <p>Email: {{ cvData.email }}</p>
               <p>Phone: {{ cvData.phone }}</p>
               <p>Address: {{ cvData.address }}</p>
+              <p *ngIf="cvData.github">
+                <i class="fab fa-github"></i>
+                <a [href]="cvData.github" target="_blank"> GitHub</a>
+            </p>
+
+            <p *ngIf="cvData.facebook">
+                <i class="fab fa-facebook"></i>
+                <a [href]="cvData.facebook" target="_blank"> Facebook</a>
+            </p>
+
+            <p *ngIf="cvData.instagram">
+                <i class="fab fa-instagram"></i>
+                <a [href]="cvData.instagram" target="_blank"> Instagram</a>
+            </p>
+
+            <p *ngIf="cvData.web">
+                <i class="fas fa-globe"></i>
+                <a [href]="cvData.web" target="_blank"> Website</a>
+            </p>
           </section>
           <section class="education">
               <h3>Education</h3>

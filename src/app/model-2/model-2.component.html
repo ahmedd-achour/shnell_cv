@@ -33,15 +33,8 @@
             </p>
         </section>
 
-          <section class="education">
-              <h3>Education</h3>
-              <ul style="color: black;">
-                  <li *ngFor="let edu of cvData.education">
-                      <h4>{{ edu.degree }}</h4>
-                      <p>{{ edu.institution }} - {{ edu.year }}</p>
-                  </li>
-              </ul>
-          </section>
+
+
 
       </div>
       <div class="right-column">
@@ -62,6 +55,13 @@
               <ul>
                   <li *ngFor="let skill of cvData.skills">{{ skill }}</li>
               </ul>
+          </section>
+          <section class="education">
+            <h3>Formations</h3>
+            <div *ngFor="let edu of cvData.education">
+              <h4>{{ edu.degree }}</h4>
+              <p>{{ edu.institution }} - {{ edu.year }}</p>
+            </div>
           </section>
           <section class="hobbies">
               <h3>Hobbies</h3>
