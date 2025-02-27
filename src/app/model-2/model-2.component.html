@@ -8,34 +8,14 @@
           </div>
           <section class="contact-info">
             <h3>Contact</h3>
-            <p><i class="fas fa-envelope"></i> Email: <a [href]="'mailto:' + cvData.email">{{ cvData.email }}</a></p>
-            <p><i class="fas fa-phone"></i> Phone: <a [href]="'tel:' + cvData.phone">{{ cvData.phone }}</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> Address: {{ cvData.address }}</p>
-
-            <p *ngIf="cvData.github">
-                <i class="fab fa-github"></i>
-                <a [href]="cvData.github" target="_blank"> GitHub</a>
-            </p>
-
-            <p *ngIf="cvData.facebook">
-                <i class="fab fa-facebook"></i>
-                <a [href]="cvData.facebook" target="_blank"> Facebook</a>
-            </p>
-
-            <p *ngIf="cvData.instagram">
-                <i class="fab fa-instagram"></i>
-                <a [href]="cvData.instagram" target="_blank"> Instagram</a>
-            </p>
-
-            <p *ngIf="cvData.web">
-                <i class="fas fa-globe"></i>
-                <a [href]="cvData.web" target="_blank"> Website</a>
-            </p>
-        </section>
-
-
-
-
+            <p><i class="fas fa-envelope"></i> <a [href]="'mailto:' + cvData.email">{{ cvData.email }}</a></p>
+            <p><i class="fas fa-phone"></i> <a [href]="'tel:' + cvData.phone">{{ cvData.phone }}</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> {{ cvData.address }}</p>
+            <p *ngIf="cvData.github"><i class="fab fa-github"></i> <a [href]="cvData.github" target="_blank">GitHub</a></p>
+            <p *ngIf="cvData.facebook"><i class="fab fa-facebook"></i> <a [href]="cvData.facebook" target="_blank">Facebook</a></p>
+            <p *ngIf="cvData.instagram"><i class="fab fa-instagram"></i> <a [href]="cvData.instagram" target="_blank">Instagram</a></p>
+            <p *ngIf="cvData.web"><i class="fas fa-globe"></i> <a [href]="cvData.web" target="_blank">Website</a></p>
+          </section>
       </div>
       <div class="right-column">
           <section class="profile">
@@ -57,7 +37,7 @@
               </ul>
           </section>
           <section class="education">
-            <h3>Formations</h3>
+            <h3>Education</h3>
             <div *ngFor="let edu of cvData.education">
               <h4>{{ edu.degree }}</h4>
               <p>{{ edu.institution }} - {{ edu.year }}</p>
@@ -70,3 +50,4 @@
       </div>
   </div>
 </body>
+

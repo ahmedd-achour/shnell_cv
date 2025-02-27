@@ -1,253 +1,86 @@
-/* Professional CV Styling */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #ffffff; /* Very light gray background */
+  background-color: #ffffff;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #000; /* Black text color */
+  color: #000;
+}
+a{
+  color: #ffffff;
 }
 
 .cv-container {
-  width: 100%; /* Ensure full width */
-  max-width: 1200px; /* Limit max width to avoid overflow on large screens */
+  width: 90%;
+  max-width: 1000px;
   background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
-  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* 1:2 ratio for left/right columns */
-  padding: 20px; /* Padding around the container */
-  margin: 0 auto; /* Ensure it’s centered */
-}
-
-/* Left Column (Profile & Contact) */
-.left-column {
-  background: #333; /* Darker left column */
-  color: black;
-  padding: 40px; /* Increased padding */
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.left-column {
+  background: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 .profile-photo {
-  width: 180px; /* Larger photo */
-  height: 180px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 5px solid #fff;
-  margin-bottom: 25px; /* Increased margin */
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow on the image */
+  border: 3px solid white;
 }
 
-.contact-info p {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 5px 0;
-  color: black; /* Set text color to black */
-}
-
-.contact-info i {
-  color: black; /* Set text color to black */
-  font-size: 1.2em;
-}
-
-.contact-info a {
-  text-decoration: none;
-  color: black; /* Set text color to black */
-  transition: color 0.3s;
-}
-
-.contact-info a:hover {
-  color: #0056b3;
-}
-
-.profile-photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Brighter glow on hover */
-}
-
-.contact-info,
-.skills,
-.hobbies {
-  width: 100%;
-  margin-top: 30px; /* Increased margin */
-  padding: 25px; /* Increased padding */
-  background-color: #444; /* Slightly lighter background for sections */
+.contact-info, .skills {
+  margin-top: 20px;
+  padding: 15px;
+  background: #444;
   border-radius: 10px;
-  text-align: left;
 }
 
-.contact-info h3,
-.skills h3,
-.hobbies h3 {
-  border-bottom: 2px solid #333; /* Lime green accent */
-  padding-bottom: 10px; /* Increased padding */
-  font-size: 1.5em; /* Larger headings */
-  text-transform: uppercase;
-  color: #fff;
-  margin-bottom: 15px; /* Increased margin */
-}
-
-/* Right Column (Main Content) */
 .right-column {
-  padding: 40px; /* Increased padding */
-  background-color: #fff;
+  padding: 20px;
 }
 
 .header {
-  background-color: rgb(65, 63, 63);
-  padding: 30px; /* Increased padding */
-  text-align: left;
-  border-radius: 10px 10px 0 0;
-  font-size: 2.2em; /* Larger header */
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 25px; /* Increased margin */
+  background: #444;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
 }
 
 section {
-  margin-top: 30px; /* Increased margin */
+  margin-top: 20px;
 }
 
 h3 {
-  color: #333; /* Darker heading color */
-  border-bottom: 2px solid #8bc34a; /* Lime green accent */
-  padding-bottom: 10px; /* Increased padding */
-  font-size: 1.7em; /* Larger heading size */
-  margin-bottom: 20px; /* Increased margin */
+  border-bottom: 2px solid #8bc34a;
+  padding-bottom: 5px;
+  font-size: 1.5em;
 }
 
-ul,
-ol {
-  list-style-type: disc;
-  padding-left: 25px; /* Increased padding */
-}
-
-li {
-  background: #f5f5f5; /* Very light gray for list items */
-  padding: 18px; /* Increased padding */
-  margin: 10px 0; /* Increased margin */
-  border-radius: 10px;
-  font-size: 1.2em; /* Slightly larger list item font */
-  border: 1px solid #eee;
-  transition: transform 0.2s ease-in-out;
-}
-
-li:hover {
-  transform: translateY(-3px); /* More pronounced hover effect */
-  background-color: #fff;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
-}
-
-/* Media Queries for Responsiveness */
-
-/* Adjusted breakpoint for tablets and below (900px) */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .cv-container {
-    grid-template-columns: 1fr; /* Stacks columns vertically */
-    padding: 10px; /* Adjusted padding */
-    margin: 0 20px; /* Center and add margin to sides */
+    flex-direction: column;
+    width: 95%;
   }
-
-  .left-column,
-  .right-column {
-    width: 100%;
-    text-align: left;
-  }
-
-  .profile-photo {
-    width: 160px; /* Slightly smaller profile photo */
-    height: 160px;
-  }
-
-  .header {
-    text-align: center;
-  }
-
-  .contact-info h3,
-  .skills h3,
-  .hobbies h3 {
-    font-size: 1.3em; /* Smaller section heading font size */
-  }
-
-  section {
-    margin-top: 20px; /* Slightly reduced margin */
-  }
-
-  li {
-    font-size: 1.1em; /* Slightly smaller list item font */
-  }
-}
-
-/* Smaller screens (phones) */
-@media (max-width: 600px) {
-  .cv-container {
-    width: 100%; /* Ensure container fits screen */
-    padding: 5px; /* Reduced padding for phones */
-    margin: 0 auto; /* Ensure container is centered */
-  }
-
   .left-column {
-    padding: 15px; /* Reduced padding for smaller screens */
+    padding: 15px;
   }
-
-  .right-column {
-    padding: 15px; /* Reduced padding for smaller screens */
-  }
-
   .profile-photo {
-    width: 140px; /* Even smaller profile photo */
-    height: 140px;
+    width: 100px;
+    height: 100px;
   }
-
   .header {
-    font-size: 1.8em; /* Smaller header size */
-    padding: 15px; /* Reduced padding */
-  }
-
-  h3 {
-    font-size: 1.4em; /* Smaller heading font size */
-  }
-
-  li {
-    font-size: 1.1em; /* Smaller font size for list items */
-  }
-}
-
-/* Very small screens (portrait phones) */
-@media (max-width: 480px) {
-  .cv-container {
-    width: 100%; /* Ensure container fits on small screens */
-    padding: 10px; /* Minimized padding */
-    margin: 0 auto; /* Center the content */
-  }
-
-  .left-column,
-  .right-column {
-    padding: 10px; /* Minimized padding */
-  }
-
-  .profile-photo {
-    width: 120px; /* Smaller profile photo */
-    height: 120px;
-  }
-
-  .header {
-    font-size: 1.5em; /* Even smaller header size */
-  }
-
-  h3 {
-    font-size: 1.2em; /* Reduced font size for section headings */
-  }
-
-  li {
-    font-size: 1em; /* Smaller list item font */
+    font-size: 1.5em;
   }
 }

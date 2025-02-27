@@ -8,7 +8,7 @@
       <input type="text" name="jobTitle" [(ngModel)]="cvData.jobTitle" placeholder="Job Title">
       <input type="tel" name="phone" [(ngModel)]="cvData.phone" placeholder="Phone">
       <input type="text" name="address" [(ngModel)]="cvData.address" placeholder="Address">
-      <input type="text" name="photo" [(ngModel)]="cvData.photo" placeholder="Photo URL">
+      <input type="file" (change)="uploadPhoto($event)" accept=".jpg, .jpeg, .png">
     </div>
 
     <div class="section">

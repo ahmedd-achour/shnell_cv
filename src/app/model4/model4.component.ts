@@ -4,6 +4,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore"; // Modula
 import { environment } from 'src/environement'; // Import your environment
 import { CvData } from '../CvData'; // Import your interface
 import Swal from 'sweetalert2'; // Import SweetAlert2
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 
 @Component({
   selector: 'app-model4',
@@ -159,4 +160,27 @@ export class Model4Component {
   removeEducation(index: number) {
     this.cvData.education.splice(index, 1);
   }
+  private storage = getStorage();
+
+  async uploadPhoto(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      const storageRef = ref(this.storage, `shnell_cv/${file.name}`);
+      try {
+        await uploadBytes(storageRef, file);
+        const downloadURL = await getDownloadURL(storageRef);
+        this.cvData.photo = downloadURL;
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        Swal.fire({
+          title: 'Upload Failed',
+          text: 'There was an error uploading your photo.',
+          icon: 'error',
+          confirmButtonText: 'Try Again'
+        });
+      }
+    }
+  }
+
+
 }
