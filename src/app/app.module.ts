@@ -24,6 +24,7 @@ import { Model4Component } from './model4/model4.component';
     HomeComponent,
     CvEditorComponent,
     Model4Component,
+
   ],
   imports: [
     BrowserModule,

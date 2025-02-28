@@ -27,6 +27,8 @@ interface CvData {
   other1: string;
   other2: string;
   other3: string;
+  pdfFiles: [{name : "" , url : ""}] // Add pdfFiles array
+
 }
 
 interface Experience {

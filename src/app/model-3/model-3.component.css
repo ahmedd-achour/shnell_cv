@@ -1,4 +1,4 @@
-/* style.css */
+/* General Body Styles */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -7,9 +7,11 @@ body {
   line-height: 1.6;
 }
 
+/* CV Container */
 .cv-container {
   display: flex;
-  max-width: 1200px;
+  flex-direction: row; /* Default for desktop */
+  width: 100%; /* Full width */
   margin: 2rem auto;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -17,29 +19,37 @@ body {
   overflow: hidden;
 }
 
+/* Left Column */
 .left-column {
   width: 30%;
-  background: #f0f8ff;
+  background: #f0f8ff; /* Light background */
   padding: 2rem;
   border-left: 4px solid #0088cc;
-  color: #2c3e50;
+  color: #2c3e50; /* Dark text */
 }
 
 .profile-photo {
   width: 120px;
-  border-radius: 50%;
+  border-radius: 100%;
   border: 3px solid #0088cc;
   display: block;
   margin: 0 auto 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for smooth hover effect */
 }
 
+.profile-photo:hover {
+  transform: scale(1.1); /* Zoom effect */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+/* Name Title */
 .name-title {
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .name-title h1 {
-  font-size: 1.8rem;
+  font-size: 2em; /* Larger name */
   color: #0088cc;
   margin-bottom: 0.5rem;
 }
@@ -49,6 +59,7 @@ body {
   color: #555;
 }
 
+/* Left Column Section */
 .left-column section {
   margin: 2rem 0;
   padding: 1.5rem;
@@ -59,7 +70,7 @@ body {
 
 .left-column h3 {
   color: #0088cc;
-  font-size: 1.1rem;
+  font-size: 1.5rem; /* Larger section titles */
   border-bottom: 2px solid #0088cc;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -73,10 +84,11 @@ body {
   margin-bottom: 0.8rem;
 }
 
+/* Right Column */
 .right-column {
   width: 70%;
   padding: 2rem;
-  color: #34495e;
+  color: #34495e; /* Dark text */
 }
 
 .right-column h3 {
@@ -84,7 +96,7 @@ body {
   border-bottom: 2px solid #0088cc;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Consistent larger titles */
 }
 
 .right-column ul {
@@ -105,9 +117,19 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Media Queries for Responsiveness */
+/* Links */
+a {
+  color: inherit; /* Match container text color */
+  text-decoration: none;
+}
 
-/* For tablets and below */
+a:hover {
+  text-decoration: underline; /* Subtle hover effect */
+}
+
+/* Media Queries */
+
+/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .cv-container {
     flex-direction: column;
@@ -115,7 +137,8 @@ body {
     border-radius: 10px;
   }
 
-  .left-column, .right-column {
+  .left-column,
+  .right-column {
     width: 100%;
     padding: 1.5rem;
   }
@@ -131,66 +154,71 @@ body {
   }
 
   .name-title h1 {
-    font-size: 1.6rem; /* Slightly smaller font for small screens */
+    font-size: 1.6rem; /* Smaller name */
   }
 
   .name-title h2 {
-    font-size: 1rem; /* Reduced font size */
+    font-size: 1rem;
   }
 
-  .left-column h3, .right-column h3 {
-    font-size: 1.3rem; /* Reduced heading size */
+  .left-column h3,
+  .right-column h3 {
+    font-size: 1.3rem; /* Smaller section titles */
   }
 
-  .left-column ul li, .right-column ul li {
-    font-size: 1rem; /* Reduced font size for list items */
+  .left-column ul li,
+  .right-column ul li {
+    font-size: 1rem;
   }
 
   .right-column .experience h4 {
-    font-size: 1rem; /* Reduced font size */
+    font-size: 1rem;
   }
 
   .right-column .experience p {
-    font-size: 0.95rem; /* Slightly smaller experience paragraph */
+    font-size: 0.95rem;
   }
 }
 
-/* For mobile phones (small screens) */
+/* Mobiles (max-width: 480px) */
 @media (max-width: 480px) {
   .cv-container {
-    margin: 0; /* Ensures no margin at all on very small screens */
-    padding: 0.5rem; /* Small padding */
+    margin: 0;
+    padding: 0.5rem;
   }
 
-  .left-column, .right-column {
-    padding: 1rem; /* Reduced padding */
+  .left-column,
+  .right-column {
+    padding: 1rem;
   }
 
   .profile-photo {
-    width: 80px; /* Smaller profile photo */
+    width: 80px;
   }
 
   .name-title h1 {
-    font-size: 1.4rem; /* Even smaller font for the name */
+    font-size: 1.4rem;
   }
 
   .name-title h2 {
-    font-size: 0.9rem; /* Smaller font for title */
+    font-size: 0.9rem;
   }
 
-  .left-column h3, .right-column h3 {
-    font-size: 1.2rem; /* Reduced heading size */
+  .left-column h3,
+  .right-column h3 {
+    font-size: 1.2rem;
   }
 
-  .left-column ul li, .right-column ul li {
-    font-size: 0.95rem; /* Smaller font size for list items */
+  .left-column ul li,
+  .right-column ul li {
+    font-size: 0.95rem;
   }
 
   .right-column .experience h4 {
-    font-size: 1rem; /* Reduced experience heading size */
+    font-size: 1rem;
   }
 
   .right-column .experience p {
-    font-size: 0.9rem; /* Smaller paragraph font size */
+    font-size: 0.9rem;
   }
 }

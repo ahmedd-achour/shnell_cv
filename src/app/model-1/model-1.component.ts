@@ -28,6 +28,8 @@ interface CvData {
   other1:String;
   other2: String;
   other3:String;
+  pdfFiles: [{name : "" , url : ""}] // Add pdfFiles array
+
   //... other properties
 }
 

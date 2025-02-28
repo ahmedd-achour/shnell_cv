@@ -17,14 +17,16 @@ export class Model3Component implements OnInit {
     email: '',
     phone: '',
     address: '',
-    presentation: '',
+    profileDescription: '',
     skills: [],
-    languages: [],
+    language: [],
     hobbies: [],
     experiences: [],
     education: [],
     itSkills: [],
-    profile: ''
+    profile: '',
+    pdfFiles: [{name : "" , url : ""}] // Add pdfFiles array
+
   };
   loading: boolean = true;
   error: string | null = null;

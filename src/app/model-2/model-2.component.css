@@ -1,51 +1,59 @@
-/* Model 2 CV Styling */
+/* General Body Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f9f9f9; /* Light gray background for a modern feel */
+  background-color: #f4f4f4; /* Softer light gray background */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #444; /* Slightly darker text for readability */
+  color: #444; /* Darker text for readability */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+/* CV Container */
 .cv-container {
-  width: 100%; /* Ensure full width */
-  max-width: 1200px; /* Limit max width to avoid overflow on large screens */
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  border-radius: 15px; /* Slightly rounded corners for soft edges */
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow for more depth */
+  border-radius: 20px; /* Soft rounded corners */
   display: grid;
-  grid-template-columns: 1fr 1.8fr; /* Flexible 1:2 column layout */
-  padding: 20px; /* Padding around the container */
-  margin: 0 auto; /* Ensure it's centered */
+  grid-template-columns: 1fr 1.8fr; /* 1:2 flexible layout */
+  padding: 30px;
+  margin: 0 auto; /* Center container */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.cv-container:hover {
+  transform: translateY(-10px); /* Slight hover effect */
 }
 
 /* Left Column (Profile & Contact) */
 .left-column {
-  background: #1a1a1a; /* Dark background for left column */
+  background: #1a1a1a; /* Dark background for the left column */
   color: #ffffff; /* White text for contrast */
-  padding: 30px; /* Spacious padding for more airiness */
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20px; /* Rounded corners for the left column */
 }
 
 .profile-photo {
-  width: 180px; /* Larger profile image */
-  height: 180px;
+  width: 200px; /* Larger profile photo for better impact */
+  height: 200px;
   border-radius: 50%;
-  border: 4px solid #fff;
-  margin-bottom: 25px;
+  border: 5px solid #fff;
+  margin-bottom: 30px;
   object-fit: cover;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft glow around the image */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); /* Stronger glow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-photo:hover {
-  transform: scale(1.1); /* Subtle zoom effect on hover */
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4); /* Bright glow on hover */
+  transform: scale(1.1); /* Subtle zoom effect */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Bright glow on hover */
 }
 
 .contact-info p {
@@ -56,33 +64,36 @@ body {
 .contact-info a {
   color: #ccc; /* Lighter text for links */
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #009688; /* Soft teal hover effect */
+  color: #00bfae; /* Teal hover effect for links */
 }
 
 .contact-info h3 {
   margin-top: 20px;
-  font-size: 1.3em;
+  font-size: 1.4em;
   text-transform: uppercase;
   border-bottom: 2px solid #ccc;
   padding-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .section-title {
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin-bottom: 20px;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Right Column (Main Content) */
 .right-column {
-  background-color: #f9f9f9; /* Light background for the right section */
-  padding: 30px;
+  background-color: #f9f9f9;
+  padding: 40px;
   color: #333;
+  border-radius: 20px; /* Rounded corners for the right column */
 }
 
 section {
@@ -91,41 +102,41 @@ section {
 
 h3 {
   color: #333;
-  border-bottom: 2px solid #4caf50; /* Green accent for headings */
+  border-bottom: 2px solid #4caf50;
   padding-bottom: 10px;
   margin-bottom: 20px;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
-ul,
-ol {
+ul, ol {
   list-style-type: disc;
   padding-left: 25px;
 }
 
 li {
-  background: #f2f2f200; /* Very light gray for list items */
-  padding: 14px;
+  background: #f2f2f200;
+  padding: 16px;
   margin: 8px 0;
   border-radius: 8px;
   font-size: 1.1em;
   border: 1px solid #ddd;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
 }
 
 li:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   background-color: #ffffff;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Media Queries for Responsiveness */
 
-/* Adjusted breakpoint for tablets and below (900px) */
+/* Adjusted for tablet (900px) */
 @media (max-width: 900px) {
   .cv-container {
-    grid-template-columns: 1fr; /* Stacks columns vertically */
-    padding: 10px; /* Adjusted padding */
-    margin: 0 20px; /* Center and add margin to sides */
+    grid-template-columns: 1fr; /* Stack columns vertically on smaller screens */
+    padding: 20px;
   }
 
   .left-column,
@@ -135,12 +146,12 @@ li:hover {
   }
 
   .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
   }
 
   .header {
-    text-align: center;
+    font-size: 1.6em;
   }
 
   .contact-info h3 {
@@ -148,76 +159,73 @@ li:hover {
   }
 
   .section-title {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 
   li {
-    font-size: 1.1em; /* Slightly smaller list item font */
+    font-size: 1.1em;
   }
 }
 
 /* Smaller screens (phones) */
 @media (max-width: 600px) {
   .cv-container {
-    width: 100%; /* Ensure container fits screen */
-    padding: 5px; /* Reduced padding for phones */
-    margin: 0 auto; /* Ensure container is centered */
+    width: 100%;
+    padding: 10px;
   }
 
   .left-column {
-    padding: 15px; /* Reduced padding for smaller screens */
+    padding: 20px;
   }
 
   .right-column {
-    padding: 15px; /* Reduced padding for smaller screens */
+    padding: 20px;
   }
 
   .profile-photo {
-    width: 120px; /* Smaller profile photo */
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
 
   .header {
-    font-size: 1.8em; /* Smaller header size */
-    padding: 15px; /* Reduced padding */
+    font-size: 1.8em;
   }
 
   h3 {
-    font-size: 1.4em; /* Smaller heading font size */
+    font-size: 1.4em;
   }
 
   li {
-    font-size: 1.1em; /* Smaller font size for list items */
+    font-size: 1em;
   }
 }
 
 /* Very small screens (portrait phones) */
 @media (max-width: 480px) {
   .cv-container {
-    width: 100%; /* Ensure container fits on small screens */
-    padding: 10px; /* Minimized padding */
-    margin: 0 auto; /* Center the content */
+    width: 100%;
+    padding: 10px;
   }
 
   .left-column,
   .right-column {
-    padding: 10px; /* Minimized padding */
+    padding: 10px;
   }
 
   .profile-photo {
-    width: 100px; /* Even smaller profile photo */
+    width: 100px;
     height: 100px;
   }
 
   .header {
-    font-size: 1.5em; /* Even smaller header size */
+    font-size: 1.5em;
   }
 
   h3 {
-    font-size: 1.2em; /* Reduced font size for section headings */
+    font-size: 1.2em;
   }
 
   li {
-    font-size: 1em; /* Smaller list item font */
+    font-size: 1em;
   }
 }

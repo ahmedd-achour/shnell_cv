@@ -32,7 +32,9 @@ export class Model4Component {
     web: '',
     other1: '',
     other2: '',
-    other3: ''
+    other3: '',
+    pdfFiles: [] // Add pdfFiles array
+
   };
 
   private firestore = getFirestore(initializeApp(environment.firebaseConfig));
@@ -74,7 +76,8 @@ export class Model4Component {
           web: '',
           other1: '',
           other2: '',
-          other3: ''
+          other3: '',
+          pdfFiles: [] // Add pdfFiles array
         };
 
       } catch (error) {
@@ -181,6 +184,51 @@ export class Model4Component {
       }
     }
   }
+
+  async uploadPdf(event: any) {
+    const files = event.target.files;
+    if (files.length + this.cvData.pdfFiles.length > 3) {
+      Swal.fire({
+        title: 'Limit Exceeded',
+        text: 'You can only upload a maximum of 3 PDFs.',
+        icon: 'warning',
+        confirmButtonText: 'Got it'
+      });
+      return;
+    }
+
+    for (const file of files) {
+      if (file.type === 'application/pdf') {
+        const storageRef = ref(this.storage, `cv_pdfs/${file.name}`);
+        try {
+          await uploadBytes(storageRef, file);
+          const downloadURL = await getDownloadURL(storageRef);
+          this.cvData.pdfFiles.push({ name: file.name, url: downloadURL });
+        } catch (error) {
+          console.error("Error uploading PDF:", error);
+          Swal.fire({
+            title: 'Upload Failed',
+            text: 'There was an error uploading your PDF.',
+            icon: 'error',
+            confirmButtonText: 'Try Again'
+          });
+        }
+      } else {
+        Swal.fire({
+          title: 'Invalid File Type',
+          text: 'Only PDF files are allowed.',
+          icon: 'error',
+          confirmButtonText: 'Got it'
+        });
+      }
+    }
+  }
+
+  // Remove PDF file from the array
+  removePdf(index: number) {
+    this.cvData.pdfFiles.splice(index, 1);
+  }
+
 
 
 }

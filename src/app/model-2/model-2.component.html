@@ -47,7 +47,22 @@
               <h3>Hobbies</h3>
               <p>{{ cvData.hobbies }}</p>
           </section>
+          <section class="portfolio">
+            <h3>Portfolio (PDFs)</h3>
+            <div *ngFor="let pdf of cvData.pdfFiles; let i = index" class="pdf-file">
+              <p>{{ pdf.name }}</p>
+
+              <!-- Create an iframe with a PDF icon centered inside it -->
+              <a [href]="pdf.url" target="_blank" class="pdf-frame">
+                <iframe [src]="pdf.url" class="pdf-iframe" frameborder="0"></iframe>
+                <div class="pdf-icon">
+                  <img src="assets/pdf.png" alt="PDF Icon" class="pdf-thumbnail">
+                </div>
+              </a>
+            </div>
+          </section>
       </div>
+
   </div>
 </body>
 
