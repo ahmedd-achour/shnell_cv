@@ -14,6 +14,7 @@ import { initializeApp } from 'firebase/app';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvEditorComponent } from './cv-editor/cv-editor.component';
 import { Model4Component } from './model4/model4.component';
+import { WebcamComponent } from './webcam/webcam.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { Model4Component } from './model4/model4.component';
     HomeComponent,
     CvEditorComponent,
     Model4Component,
+    WebcamComponent,
 
   ],
   imports: [

@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Welcome Screen Styles */
 .welcome-screen {
   text-align: center;
   padding: 50px;
@@ -49,6 +51,7 @@ body {
   background-color: silver;
 }
 
+/* CV Models Section */
 .cv-models {
   padding: 30px;
   text-align: center;
@@ -114,6 +117,7 @@ body {
   color: silver;
 }
 
+/* Contact Button */
 .contact-container {
   display: flex;
   justify-content: center;
@@ -139,9 +143,24 @@ body {
   transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* Admin Button Styles */
+.adminstyle {
+  background-color: #f0f0f0 !important; /* Light gray, blends with background */
+  color: #555; /* Subtle dark gray text */
+  border: 1px solid #ccc; /* Light border for definition */
+  padding: 8px 16px; /* Comfortable padding */
+  font-size: 14px; /* Small but readable */
+  cursor: pointer;
+  border-radius: 5px; /* Slightly rounded edges */
+  transition: background-color 0.3s, color 0.3s;
+}
 
-/* Adjust font sizes and layout for smaller devices (tablets and below) */
+.adminstyle:hover {
+  background-color: #ddd; /* Slight highlight on hover */
+  color: #333 !important;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .welcome-screen h1 {
     font-size: 2.5rem;
@@ -172,7 +191,6 @@ body {
   }
 }
 
-/* Adjust for mobile (phones and smaller tablets) */
 @media (max-width: 768px) {
   .welcome-screen {
     padding: 30px;
@@ -214,7 +232,6 @@ body {
   }
 }
 
-/* Extra small mobile (portrait phones) */
 @media (max-width: 480px) {
   .welcome-screen h1 {
     font-size: 1.8rem;
@@ -238,5 +255,11 @@ body {
 
   .model img {
     max-height: 120px; /* Smaller images on very small screens */
+  }
+
+  .adminstyle {
+    font-size: 12px; /* Even smaller font on very small screens */
+    padding: 6px 12px; /* Adjust padding for very small screens */
+    color: #333;
   }
 }

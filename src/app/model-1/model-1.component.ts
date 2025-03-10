@@ -19,6 +19,7 @@ interface CvData {
   hobbies: string;
   profileDescription: string;
   experiences: Experience[];
+  language : string[];
   education: Education[];
   github: String;
   facebook: String;

@@ -119,7 +119,44 @@ export class Model4Component {
       this.cvData.skills.push(skill.trim());
     }
   }
-
+  areyouadmin(){
+    Swal.fire({
+      title: "enter the admin passkey to access dashboard",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off"
+      },
+      showCancelButton: true,
+      confirmButtonText: "confirm",
+      showLoaderOnConfirm: true,
+      preConfirm: async (login) => {
+        try {
+          const githubUrl = `
+            https://api.github.com/users/${login}
+          `;
+          const response = await fetch(githubUrl);
+          if (!response.ok) {
+            return Swal.showValidationMessage(`
+              ${JSON.stringify(await response.json())}
+            `);
+          }
+          return response.json();
+        } catch (error) {
+          Swal.showValidationMessage(`
+            Request failed: ${error}
+          `);
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: `${result.value.login}'s avatar`,
+          imageUrl: result.value.avatar_url
+        });
+      }
+    });
+  }
   removeSkill(index: number) {
     this.cvData.skills.splice(index, 1);
   }

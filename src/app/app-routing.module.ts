@@ -6,6 +6,7 @@ import { Model3Component } from './model-3/model-3.component';
 import { HomeComponent } from './home/home.component';
 import { CvEditorComponent } from './cv-editor/cv-editor.component';
 import { Model4Component } from './model4/model4.component';
+import { WebcamComponent } from './webcam/webcam.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,8 @@ const routes: Routes = [
     path: "",
     component: HomeComponent, pathMatch: 'full'
 
+  },{
+    path : "trash" , component : WebcamComponent
   }
 ];
 

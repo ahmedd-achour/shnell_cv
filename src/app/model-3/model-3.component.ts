@@ -19,7 +19,7 @@ export class Model3Component implements OnInit {
     address: '',
     profileDescription: '',
     skills: [],
-    language: [],
+    languages: [],
     hobbies: [],
     experiences: [],
     education: [],
