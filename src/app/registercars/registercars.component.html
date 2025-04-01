@@ -1,0 +1,120 @@
+<div class="container">
+  <h2>InnoviSight</h2>
+<!-- Carousel Container -->
+<div class="row-container">
+  <!-- Data Navigation (Carousel) Section -->
+  <div class="data-navigation">
+    <!-- Left Arrow to move back -->
+    <button (click)="prevData()" class="nav-btn">&#10094;</button>
+
+    <!-- Displaying the current data -->
+    <div class="data-display">
+      <h3>{{ data[currentIndex].title }}</h3>
+      <p>{{ data[currentIndex].description }}</p>
+    </div>
+
+    <!-- Right Arrow to move forward -->
+    <button (click)="nextData()" class="nav-btn">&#10095;</button>
+  </div>
+
+  <!-- Register Section -->
+  <div class="register-section">
+    <!-- Carousel Container -->
+    <div class="register-card">
+      <h3 class="register-title">Register a New Car</h3>
+      <p class="register-description">Please provide the necessary details to register a new car in the system.</p>
+
+      <!-- Form for registering a new car -->
+      <div class="register-form">
+        <div class="input-group">
+          <label for="carCode" class="input-label">Car Code</label>
+          <input [(ngModel)]="newCar.carCode" id="carCode" type="text" placeholder="Enter Car Code" class="register-input" />
+        </div>
+
+        <div class="input-group location-input">
+          <label class="input-label">Location</label>
+          <div class="coordinates">
+            <input [(ngModel)]="newCar.latitude" type="number" placeholder="Latitude" class="register-input" />
+            <input [(ngModel)]="newCar.longitude" type="number" placeholder="Longitude" class="register-input" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="expiry" class="input-label">Expiry Duration</label>
+          <select [(ngModel)]="newCar.expiryDuration" id="expiry" class="register-input">
+            <option value="6">6 Months</option>
+            <option value="9">9 Months</option>
+            <option value="12">1 Year</option>
+          </select>
+        </div>
+
+        <div class="register-btn-container">
+          <button (click)="registerNewCar()" class="register-btn">Register Car</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Existing table and data goes here -->
+  <table class="styled-table">
+    <!-- Table contents go here -->
+  </table>
+
+  <!-- Search Input -->
+  <input type="text" class="search-input" placeholder="Search users..." (input)="filterUsers($event)" />
+
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th (click)="sortTable('name')">User</th>
+        <th (click)="sortTable('cin')">CIN</th>
+        <th (click)="sortTable('phoneNumber')">Phone</th>
+        <th (click)="sortTable('bloodType')">Blood Type</th>
+        <th (click)="sortTable('yearOfBirth')">Birth Date</th>
+        <th (click)="sortTable('carCode')">Vehicle Code</th>
+        <th (click)="sortTable('role')">Role</th>
+        <th>Status</th>
+        <th>Documents</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <td>{{ user.name }}</td>
+        <td>{{ user.cin }}</td>
+        <td>{{ user.phoneNumber }}</td>
+        <td>{{ user.bloodType }}</td>
+        <td>{{ user.yearOfBirth }}</td>
+        <td>{{ user.carCode }}</td>
+        <td>
+
+          <select [(ngModel)]="user.role" (change)="updateRole(user)">
+            <option value="owner">Owner</option>
+            <option value="member">Member</option>
+          </select>
+
+        </td>
+        <td>
+          <td>
+            <select (change)="updateStatus(user, $event)">
+              <option [value]="'true'" [selected]="user.isAdminApproved">Approved</option>
+              <option [value]="'false'" [selected]="!user.isAdminApproved">Pending</option>
+            </select>
+
+        </td>
+        <td class="document-container">
+          <ng-container *ngFor="let key of getDocumentKeys()">
+            <button *ngIf="user.images[key]" (click)="openImage(user.images[key])">
+              {{ getDocumentName(key) }}
+            </button>
+          </ng-container>
+        </td>
+        <td>
+          <button class="approve-btn" (click)="viewMembership(user.carCode)">View Membership</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

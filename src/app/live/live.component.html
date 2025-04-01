@@ -1,0 +1,5 @@
+<div>
+  <h1>Live Stream</h1>
+  <img *ngIf="frameUrl" [src]="frameUrl" alt="Live Stream" />
+  <p *ngIf="!frameUrl">Loading frame...</p>
+</div>

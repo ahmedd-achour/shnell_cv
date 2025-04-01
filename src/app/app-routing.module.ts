@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { CvEditorComponent } from './cv-editor/cv-editor.component';
 import { Model4Component } from './model4/model4.component';
 import { WebcamComponent } from './webcam/webcam.component';
+import { RegistercarsComponent } from './registercars/registercars.component';
+import { LiveComponent } from './live/live.component';
 
 const routes: Routes = [
   {
@@ -23,15 +25,19 @@ const routes: Routes = [
   {
     path: "3/:idref",
     component: Model3Component
+  },{
+    path: "cars" , component: RegistercarsComponent
+  },
+  {
+path :"live" , component: LiveComponent
   },
 
   {
     path: "",
     component: HomeComponent, pathMatch: 'full'
 
-  },{
-    path : "trash" , component : WebcamComponent
-  }
+  },
+
 ];
 
 @NgModule({

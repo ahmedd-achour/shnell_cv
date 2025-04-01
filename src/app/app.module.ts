@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CvEditorComponent } from './cv-editor/cv-editor.component';
 import { Model4Component } from './model4/model4.component';
 import { WebcamComponent } from './webcam/webcam.component';
+import { RegistercarsComponent } from './registercars/registercars.component';
+import { LiveComponent } from './live/live.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { WebcamComponent } from './webcam/webcam.component';
     CvEditorComponent,
     Model4Component,
     WebcamComponent,
+    RegistercarsComponent,
+    LiveComponent,
 
   ],
   imports: [
