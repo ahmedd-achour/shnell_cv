@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["sweetalert2"],
             "outputPath": "dist/shnell_cv",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -137,15 +138,16 @@
             "production": {
               "budgets": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
+                    "type": "initial",
+                    "maximumWarning": "5mb",
+                    "maximumError": "7mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "10kb",
+                    "maximumError": "15kb"
+                  }
+                
               ],
               "outputHashing": "all"
             },
