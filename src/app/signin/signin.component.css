@@ -1,0 +1,111 @@
+.half {
+  min-height: 100vh;}
+.bg {
+  background-size: cover;  background-position: center;
+}
+.contents {  background: #f6f7fc;
+}
+.container {  padding: 6rem 0;
+}
+.form-control {  border: none;
+  border-radius: 4px;  height: 54px;
+  background: #efefef;  color: #333;
+}
+.form-control:active, .form-control:focus {  outline: none;
+  box-shadow: none;  border-color: #3e64ff;
+  background: #e2e2e2;}
+.control {
+  display: block;  position: relative;
+  padding-left: 30px;  margin-bottom: 15px;
+  cursor: pointer;}
+.control .caption {
+  position: relative;  top: -3px;
+}
+.control__indicator {  position: absolute;
+  top: 0;  left: 0;
+  height: 20px;  width: 20px;
+  background: #e6e6e6;  border-radius: 4px;
+}
+.control--checkbox input:checked ~ .control__indicator {  background: #3e64ff;
+}
+.control__indicator:after {  content: '';
+  position: absolute;  display: none;
+}
+.control--checkbox .control__indicator:after {  left: 8px;
+  top: 4px;  width: 5px;
+  height: 10px;  border: solid #fff;
+  border-width: 0 2px 2px 0;  transform: rotate(45deg);
+}
+.control--checkbox input:checked ~ .control__indicator:after {  display: block;
+}
+.btn {  height: 54px;
+  padding-left: 30px;  padding-right: 30px;
+}
+.btn-primary {  background: #3e64ff;
+  border-color: #3e64ff;}
+.btn-primary:hover {
+  background: #2e51e8;  border-color: #2e51e8;
+}
+.forgot-pass {  color: #888;
+  font-size: 14px;}
+.ml-auto {
+  margin-left: auto;}
+.spinner-border {
+  width: 1rem;  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

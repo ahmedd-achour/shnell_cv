@@ -1,0 +1,178 @@
+<app-header></app-header>
+
+
+
+
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('../../assets/cnt.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
+        <h1 class="mb-3 bread">Contact Us</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section contact-section">
+  <div class="container">
+    <div class="row d-flex mb-5">
+      <div class="col-md-12 text-center mb-5">
+        <h2 class="heading-section">We're Here For You</h2>
+        <p class="lead">Our team is ready to assist you 24/7 in case of accidents or emergencies</p>
+      </div>
+    </div>
+    
+    <div class="row d-flex mb-5 contact-info">
+      <div class="col-md-4">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="icon mr-3">
+                <span class="icon-map-o"></span>
+              </div>
+              <p><span>Address:</span> 123 Safety Drive, Tunis, Tunisia</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="icon mr-3">
+                <span class="icon-mobile-phone"></span>
+              </div>
+              <p><span>Emergency:</span> <a href="tel://+21612345678">+216 1234 5678</a></p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="border w-100 p-4 rounded mb-2 d-flex">
+              <div class="icon mr-3">
+                <span class="icon-envelope-o"></span>
+              </div>
+              <p><span>Email:</span> <a href="mailto:aladinesouayah384@gmail.com">helpgmail.com</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Emergency Services -->
+        <div class="border w-100 p-4 rounded mb-4">
+          <h3 class="mb-3">Emergency Services</h3>
+          <div class="d-flex align-items-center mb-2">
+            <div class="icon mr-3 text-danger">
+              <span class="icon-ambulance"></span>
+            </div>
+            <p class="mb-0"><span>Ambulance:</span> <a href="tel://1122">1122</a></p>
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <div class="icon mr-3 text-primary">
+              <span class="icon-shield"></span>
+            </div>
+            <p class="mb-0"><span>Police:</span> <a href="tel://197">197</a></p>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="icon mr-3 text-warning">
+              <span class="icon-fire"></span>
+            </div>
+            <p class="mb-0"><span>Fire Dept:</span> <a href="tel://198">198</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-8 block-9 mb-md-5">
+        <div class="bg-light p-5 contact-form rounded shadow-sm">
+          <h3 class="mb-4">Send us a message</h3>
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" name="name" [(ngModel)]="contactData.name" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" name="email" [(ngModel)]="contactData.email" required email>
+              
+            </div>
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Subject" name="subject" [(ngModel)]="contactData.subject" required>
+            </div>
+            <div class="form-group mb-3">
+              <select class="form-control" name="inquiryType" [(ngModel)]="contactData.inquiryType" required>
+                <option value="" disabled selected>Select Inquiry Type</option>
+                <option value="emergency">Emergency Assistance</option>
+                <option value="membership">Membership Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group mb-3">
+              <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message" [(ngModel)]="contactData.message" required></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary py-3 px-5">
+                <i class="fas fa-paper-plane mr-2"></i> Send Message
+              </button>
+              
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Map Section -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h3 class="mb-4">Our Location</h3>
+        <div class="bg-light p-2 rounded">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102239.58355570477!2d10.073838887158204!3d36.79399998287729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd337f5e7ef543%3A0xd671924e714a0275!2sTunis!5e0!3m2!1sen!2stn!4v1655280857350!5m2!1sen!2stn" 
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ Section -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h3 class="mb-4">Frequently Asked Questions</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How does the emergency assistance work?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Our emergency assistance is available 24/7. In case of an accident, press the emergency button in the app or call our hotline. We'll immediately dispatch help and notify emergency contacts with your location.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How do I register my vehicle with Car Safety?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                You can register your vehicle through our app or website. You'll need your vehicle registration details, insurance information, and emergency contact information. Our team will guide you through the process.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                What information is shared with emergency services?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                When an emergency is triggered, we share your location, vehicle details, medical information (like blood type and allergies), and emergency contact information with relevant emergency services to ensure you receive proper care.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,93 @@
+<!doctype html>
+<app-header style="position: fixed; width: 100%; z-index: 1000;background-color: black; color: black;"></app-header>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+
+    <title>Login #2</title>
+  </head>
+  <body>
+  
+
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('../../assets/sign/images/bg_1.jpg');"></div>
+    <div class="contents order-2 order-md-1">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <h3 *ngIf="!resetPasswordMode">Login to <strong>Your Account</strong></h3>
+            <h3 *ngIf="resetPasswordMode">Reset Your Password</h3>
+            
+            <p class="mb-4" *ngIf="!resetPasswordMode">Sign in to access your dashboard and manage your account.</p>
+            <p class="mb-4" *ngIf="resetPasswordMode">Enter your email address and we'll send you a link to reset your password.</p>
+            
+            <!-- Alert for errors -->
+            <div *ngIf="errorMessage" class="alert alert-danger mb-4">
+              {{ errorMessage }}
+            </div>
+            
+            <!-- Success message for password reset -->
+            <div *ngIf="resetEmailSent" class="alert alert-success mb-4">
+              Password reset email sent! Check your inbox for further instructions.
+            </div>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group first">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="email@Admin.com" id="email" formControlName="email">
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger mt-1">
+                  <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</small>
+                  <small *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</small>
+                </div>
+              </div>
+              
+              <div class="form-group last mb-3" *ngIf="!resetPasswordMode">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password">
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger mt-1">
+                  <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+                  <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters</small>
+                </div>
+              </div>
+              
+              <div class="d-flex mb-5 align-items-center" *ngIf="!resetPasswordMode">
+                <label class="control control--checkbox mb-0">
+                  <span class="caption">Remember me</span>
+                  <input type="checkbox" formControlName="rememberMe"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto">
+                  <a href="javascript:void(0)" class="forgot-pass" (click)="toggleResetPasswordMode()">Forgot Password?</a>
+                </span> 
+              </div>
+
+              <button type="submit" [disabled]="loading" class="btn btn-block btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                {{ resetPasswordMode ? 'Send Reset Link' : 'Log In' }}
+              </button>
+              
+              <div class="text-center mt-4" *ngIf="resetPasswordMode">
+                <a href="javascript:void(0)" (click)="toggleResetPasswordMode()">Back to Login</a>
+              </div>
+              
+              <div class="text-center mt-4" *ngIf="!resetPasswordMode">
+                <p>Don't Use Your account if you are not An Admin </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+    
+    
+
+  </body>
+</html>

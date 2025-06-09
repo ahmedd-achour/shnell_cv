@@ -1,0 +1,75 @@
+// Variables
+$primary-color: #3a86ff;
+$secondary-color: #ff006e;
+$dark-color: #1a1a2e;
+$light-color: #ffffff;
+$gray-color: #f8f9fa;
+$text-color: #4a4a4a;
+$transition: all 0.3s ease;
+
+// Global Styles
+.services-page {
+  color: $text-color;
+  overflow-x: hidden;
+}
+
+.section-header {
+  margin-bottom: 60px;
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: $primary-color;
+    }
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: lighten($text-color, 15%);
+  }
+}
+
+// Hero Section
+.hero-section {
+  background: linear-gradient(135deg, $primary-color, darken($primary-color, 20%));
+  color: $light-color;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;}
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../../assets/car/images/pattern.svg');
+    opacity: 0.1;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+  

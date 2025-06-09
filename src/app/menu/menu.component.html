@@ -1,0 +1,30 @@
+<header>
+    <app-header></app-header>
+  </header>
+  
+  <div class="page-wrapper">
+    <!-- Sidebar Navigation -->
+    <app-menu class="sidebar" [class.active]="isSidebarVisible"></app-menu>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="nav-toggle">
+        <button class="btn btn-toggle toggle-sidebar" (click)="toggleSidebar()">
+          <i class="gg-menu-right"></i>
+        </button>
+        <button class="btn btn-toggle sidenav-toggler" (click)="toggleSidebar()">
+          <i class="gg-menu-left"></i>
+        </button>
+      </div>
+  
+      <button class="topbar-toggler more">
+        <i class="gg-more-vertical-alt"></i>
+      </button>
+  
+      <!-- Your page content -->
+      <section class="page-content">
+        <!-- ... -->
+      </section>
+    </div>
+  </div>
+  

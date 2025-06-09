@@ -1,0 +1,20 @@
+/* Global styles to ensure footer positioning */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.main-content {
+  flex: 1 0 auto; /* Grow to fill available space */
+}
+
+app-footer {
+  flex-shrink: 0; /* Don't shrink the footer */
+}

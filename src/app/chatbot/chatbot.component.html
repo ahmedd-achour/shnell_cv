@@ -1,0 +1,41 @@
+<div class="chatbot-container" [class.minimized]="isMinimized">
+  <div class="chatbot-header" (click)="toggleChat()">
+    <!-- <h3 *ngIf="!isMinimized">Car Safety Assistant</h3> -->
+    <i *ngIf="isMinimized" class="chat-icon">
+      <!-- Replace with your image or icon -->
+      <img src="../../assets/soses.jpg" alt="Chatbot Icon" class="chatbot-icon" />
+    </i>
+    <button class="toggle-btn" *ngIf="!isMinimized">
+      <i class="fas fa-chevron-down"></i>
+    </button>
+  </div>
+
+  <div class="chatbot-body" *ngIf="!isMinimized">
+    <div class="messages-container">
+      <div *ngFor="let message of messages" 
+           class="message" 
+           [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+           <div class="message-content">
+            <span *ngIf="!message.isUser" class="bot-icon">🤖</span>
+            {{ message.text }}
+            <span *ngIf="message.isUser" class="user-icon">👤</span>
+          </div>
+      </div>
+      <div *ngIf="isLoading" class="loading-indicator">
+        <div class="dot-pulse"></div>
+      </div>
+    </div>
+    
+
+   
+
+    <div class="input-container">
+      <input type="text" [(ngModel)]="userInput" placeholder="Ask about car safety..." (keyup.enter)="sendMessage()" />
+      <button (click)="sendMessage()">
+        <img src="../../assets/send.png" alt="Send" class="chatbot-send-icon" />
+        <!-- <i class="fas fa-paper-plane"></i> -->
+      </button>
+      
+    </div>
+  </div>
+</div>

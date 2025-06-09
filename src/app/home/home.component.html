@@ -1,0 +1,211 @@
+<div class="carbook-container">
+<app-header></app-header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Fast & Easy Way To Protect Your Car</h1>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts</p>
+        <a href="#" class="play-btn" (click)="openVideoModal($event)">
+          <div class="play-icon">
+            <span>▶</span>
+          </div>
+          <span class="play-text">Easy steps for Protecting a car</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<!-- Form Section -->
+<section class="form-section">
+  <div class="container">
+    <div class="form-container">
+      <div class="form-wrapper">
+          
+
+          <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+            <h2>Buy our product to be safe</h2>
+
+            
+            <div class="form-group">
+              <label for="pickupTime">Pick-up time</label>
+              <input id="pickupTime" name="pickupTime" [(ngModel)]="formData.pickupTime" type="time" required />
+            </div>
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" [(ngModel)]="formData.fullName" type="text" placeholder="Your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" [(ngModel)]="formData.email" type="email" placeholder="Your email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" [(ngModel)]="formData.phone" type="tel" placeholder="Your phone number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="additionalInfo">Additional Information</label>
+              <textarea id="additionalInfo" name="additionalInfo" [(ngModel)]="formData.additionalInfo" placeholder="Any special requests" rows="3"></textarea>
+            </div>
+
+            <button type="submit"  class="reserve-btn">Send Request</button>
+          </form>
+
+        </div>
+<!-- 
+          <div class="form-group">
+            <label for="pickupTime">Pick-up time</label>
+            <input id="pickupTime" name="pickupTime" type="time" required>
+          </div>
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalInfo">Additional Information</label>
+            <textarea id="additionalInfo" name="additionalInfo" placeholder="Any special requests or info" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Send Request</button>
+          </div>
+        </form>
+      </div> -->
+
+      <div class="services-wrapper">
+        <h3>Better way to protect your perfect cars</h3>
+        <div class="services-row">
+          <div class="service-item">
+            <div class="service-icon"><span>📍</span></div>
+            <h4>Choose your pickup location</h4>
+          </div>
+          <div class="service-item">
+            <div class="service-icon"><span>🤝</span></div>
+            <h4>Select the best deal</h4>
+          </div>
+          <div class="service-item">
+            <div class="service-icon"><span>🚗</span></div>
+            <h4>Select the best Product for your car</h4>
+
+          </div>
+        </div>
+        <button (click)="showReservePopup()" class="reserve-btn">Reserve your protectal car</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Load EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+
+<app-chatbot></app-chatbot>
+
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center w-100" id="videoModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="player" style="width: 100%; height: 400px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="subheading">Testimonials</span>
+        <h2>Happy Clients</h2>
+      </div>
+      
+      <div class="testimonials-slider">
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <div class="rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"Finally, a platform that puts driver protection first! The quality of the items and the fast delivery were excellent. It’s great knowing I’m better prepared for emergencies."
+            </p>
+            <div class="client-info">
+              <div class="client-img">
+                <img src="../../assets/car/images/ayedi.jpg" alt="Client">
+              </div>
+              <div class="client-details">
+                <h5>ayoub ayedi</h5>
+                <span>student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <div class="rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>
+
+              "The product I bought has truly made me feel safer on the road. It’s reliable, easy to use, and I recommend it to every driver who cares about their safety"
+             </p>
+            <div class="client-info">
+              <div class="client-img">
+                <img src="../../assets/jihed.jpg" alt="Client">
+              </div>
+              <div class="client-details">
+                <h5>jihed borni</h5>
+                <span>student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-item">
+          <div class="testimonial-content">
+            <div class="rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p> "I purchased a car safety kit, and it exceeded my expectations. The tools are practical, well-made, and give me peace of mind whenever I drive."</p>
+            <div class="client-info">
+              <div class="client-img">
+                <img src="../../assets/yassin.jpg" alt="Client">
+              </div>
+              <div class="client-details">
+                <h5>yassin Rebhi</h5>
+                <span>Engenieer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<app-footer></app-footer>
+
+
+
+

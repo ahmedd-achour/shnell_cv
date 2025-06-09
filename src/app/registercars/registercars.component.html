@@ -1,0 +1,620 @@
+
+
+
+
+
+<div class="wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar" data-background-color="dark">
+    <div class="sidebar-logo">
+      <!-- Logo Header -->
+      <div class="logo-header" data-background-color="dark">
+        <a href="#" class="logo">
+          <img
+            src="../../assets/fes/kes/assets/img/kaiadmin/logo_light.svg"
+            alt="navbar brand"
+            class="navbar-brand"
+            height="20"
+          />
+        </a>
+        <div class="nav-toggle">
+          <button class="btn btn-toggle toggle-sidebar">
+            <i class="gg-menu-right"></i>
+          </button>
+          <button class="btn btn-toggle sidenav-toggler">
+            <i class="gg-menu-left"></i>
+          </button>
+        </div>
+        <button class="topbar-toggler more">
+          <i class="gg-more-vertical-alt"></i>
+        </button>
+      </div>
+      <!-- End Logo Header -->
+    </div>
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+      <div class="sidebar-content">
+        <ul class="nav nav-secondary">
+          <li class="nav-item active">
+            <a routerLink="/cars">
+              <i class="fas fa-home"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a routerLink="/products">
+
+              <i class="fas fa-car"></i>
+              <p>Product Management</p>
+              <i class="fas fa-users"></i>
+              
+            </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/abonnement">
+
+              <i class="fas fa-car"></i>
+              <p>Subscription Manage</p>
+              <i class="fas fa-users"></i>
+              
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a routerLink="/home">
+
+              <i class="fas fa-car"></i>
+              <p>Cars Page</p>
+              <i class="fas fa-users"></i>
+              
+            </a>
+          </li>
+
+
+
+
+
+          
+          <li class="nav-item">
+            <a href="#" (click)="logout(); $event.preventDefault()">
+              <i class="fas fa-sign-out-alt"></i>
+              <p>LogOut</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- End Sidebar -->
+
+  <div class="main-panel">
+    <div class="main-header">
+      <div class="main-header-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark">
+          <a href="#" class="logo">
+            <img
+              src="../../assets/fes/kes/assets/img/kaiadmin/logo_light.svg"
+              alt="navbar brand"
+              class="navbar-brand"
+              height="20"
+            />
+          </a>
+          <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+              <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+              <i class="gg-menu-left"></i>
+            </button>
+          </div>
+          <button class="topbar-toggler more">
+            <i class="gg-more-vertical-alt"></i>
+          </button>
+        </div>
+        <!-- End Logo Header -->
+      </div>
+      <!-- Navbar Header -->
+      <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+            <div class="input-group">
+                <button type="submit" class="btn btn-search pe-1">
+                  <i class="fa fa-search search-icon"></i>
+                </button>
+             
+              <input type="text" class="form-control" placeholder="Search users..." (input)="filterUsers($event)" />
+            </div>
+          </nav>
+
+          <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+           
+
+            <li class="nav-item topbar-user dropdown hidden-caret">
+              <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                <div class="avatar-sm">
+                  <img src="../../assets/fes/kes/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                </div>
+                <span class="profile-username">
+                  <span class="op-7">Hi,</span>
+                  <span class="fw-bold">Admin</span>
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-user animated fadeIn">
+                <div class="dropdown-user-scroll scrollbar-outer">
+                  <li>
+                    <div class="user-box">
+                      <div class="avatar-lg">
+                        <img src="../../assets/fes/kes/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                      </div>
+                      <div class="u-text">
+                        <h4>Admin</h4>
+                        <p class="text-muted">admin.com</p>
+                        <a href="#" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a class="dropdown-item" href="#">Account Setting</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+    </div>
+
+    <div class="container">
+      <div class="page-inner">
+   
+<!-- Include FontAwesome for icons -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  rel="stylesheet"
+/>
+
+<style>
+  /* Container for the cards */
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  /* Each card */
+  .card-stats {
+    flex: 1 1 22%; /* 4 cards in a row with gap */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+  .card-stats:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Icon container */
+  .icon-circle {
+    flex-shrink: 0;
+    background: #eee;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: white;
+  }
+
+  /* Color variants */
+  .icon-car {
+    background: #4caf50; /* green */
+  }
+  .icon-approved {
+    background: #2196f3; /* blue */
+  }
+  .icon-pending {
+    background: #ff9800; /* orange */
+  }
+  .icon-rejected {
+    background: #f44336; /* red */
+  }
+
+  /* Text content */
+  .card-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .card-content h4 {
+    margin: 0.25rem 0 0 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #222;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .card-stats {
+      flex: 1 1 48%;
+    }
+  }
+  @media (max-width: 480px) {
+    .card-stats {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<div class="stats-container">
+  <!-- Total Cars -->
+  <div class="card-stats">
+    <div class="icon-circle icon-car">
+      <i class="fas fa-car"></i>
+    </div>
+    <div class="card-content">
+      <p>Total Cars</p>
+      <h4>{{ totalCars }}</h4>
+    </div>
+  </div>
+
+  <!-- Approved Users -->
+  <div class="card-stats">
+    <div class="icon-circle icon-approved">
+      <i class="fas fa-user-check"></i>
+    </div>
+    <div class="card-content">
+      <p>Approved Users</p>
+      <h4>{{ totalApprovedUsers }}</h4>
+    </div>
+  </div>
+
+  <!-- Pending Users -->
+  <div class="card-stats">
+    <div class="icon-circle icon-pending">
+      <i class="fas fa-user-clock"></i>
+    </div>
+    <div class="card-content">
+      <p>Pending Users</p>
+      <h4>{{ totalPendingUsers }}</h4>
+    </div>
+  </div>
+
+  <!-- Not Accepted Users -->
+  <div class="card-stats">
+    <div class="icon-circle icon-rejected">
+      <i class="fas fa-user-times"></i>
+    </div>
+    <div class="card-content">
+      <p>Not Accepted</p>
+      <h4>{{ totalNotAcceptedUsers }}</h4>
+    </div>
+  </div>
+</div>
+
+        <!-- Stats Cards -->
+        <!-- <div class="row">
+          <div class="col-sm-6 col-md-3">
+            <div class="card card-stats card-round">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-icon">
+                    <div class="icon-big text-center icon-primary bubble-shadow-small">
+                      <i class="fas fa-car"></i>
+                    </div>
+                  </div>
+                  <div class="col col-stats ms-3 ms-sm-0">
+                    <div class="numbers">
+                      <p class="card-category">Total Cars</p>
+                      <h4 class="card-title">{{ totalCars }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="col-sm-6 col-md-3">
+            <div class="card card-stats card-round">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-icon">
+                    <div class="icon-big text-center icon-info bubble-shadow-small">
+                      <i class="fas fa-user-check"></i>
+                    </div>
+                  </div>
+                  <div class="col col-stats ms-3 ms-sm-0">
+                    <div class="numbers">
+                      <p class="card-category">Approved Users</p>
+                      <h4 class="card-title">{{ totalApprovedUsers }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="col-sm-6 col-md-3">
+            <div class="card card-stats card-round">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-icon">
+                    <div class="icon-big text-center icon-warning bubble-shadow-small">
+                      <i class="fas fa-user-clock"></i>
+                    </div>
+                  </div>
+                  <div class="col col-stats ms-3 ms-sm-0">
+                    <div class="numbers">
+                      <p class="card-category">Pending Users</p>
+                      <h4 class="card-title">{{ totalPendingUsers }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+<!--          
+          <div class="col-sm-6 col-md-3">
+            <div class="card card-stats card-round">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-icon">
+                    <div class="icon-big text-center icon-danger bubble-shadow-small">
+                      <i class="fas fa-user-times"></i>
+                    </div>
+                  </div>
+                  <div class="col col-stats ms-3 ms-sm-0">
+                    <div class="numbers">
+                      <p class="card-category">Not Accepted</p>
+                      <h4 class="card-title">{{ totalNotAcceptedUsers }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+          <div>
+            <!-- <h1 class="fw-bold mb-3">Car Registration Management</h1>
+            <h6 class="op-7 mb-2">Manage registered cars and users</h6> -->
+          </div>
+          <div class="ms-md-auto py-2 py-md-0">
+            <button class="btn btn-primary btn-round" data-bs-toggle="modal" data-bs-target="#registerCarModal">
+              <i class="fa fa-plus"></i> Register New Car
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Table Card -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-round">
+              <div class="card-header bg-primary text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- <h4 class="card-title mb-0">Registered Users</h4> -->
+                  <!-- <div class="search-wrapper">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search users..." (input)="onSearchChange($event)" />
+                      <div class="input-group-append">
+                        <span class="input-group-text bg-white">
+                          <i class="fa fa-search"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+              <div class="card-body">
+                <div *ngIf="loading" class="text-center p-5">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <p class="mt-2">Loading users...</p>
+                </div>
+                
+                <div *ngIf="error" class="alert alert-danger">
+                  {{ error }}
+                </div>
+                
+                <div *ngIf="!loading && !error" class="table-responsive">
+                  <table class="table table-hover table-striped">
+                    <thead class="bg-light">
+                      <tr>
+                        <th (click)="sortTable('name')">User <i class="fas fa-sort"></i></th>
+                        <th (click)="sortTable('cin')">CIN <i class="fas fa-sort"></i></th>
+                        <th (click)="sortTable('phoneNumber')">Phone <i class="fas fa-sort"></i></th>
+                        <th (click)="sortTable('bloodType')">Blood <i class="fas fa-sort"></i></th>
+                        <th (click)="sortTable('carCode')">Vehicle <i class="fas fa-sort"></i></th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+
+                        <th></th>
+
+                        <th>Actions</th>
+                        <th></th>
+
+                        <th>Actions</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let user of filteredUsers">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.cin }}</td>
+                        <td>{{ user.phoneNumber }}</td>
+                        <td>{{ user.bloodType }}</td>
+                        <td>{{ user.carCode }}</td>
+                        <td>
+                          <select class="form-select form-select-sm" [(ngModel)]="user.role" (change)="updateRole(user)">
+                            <option value="owner">Owner</option>
+                            <option value="member">Member</option>
+                          </select>
+                        </td>
+                        <td>
+                          <span [ngClass]="{'badge bg-success': user.isAdminApproved, 'badge bg-warning': !user.isAdminApproved && user.isOwnerAccepted, 'badge bg-danger': !user.isOwnerAccepted}">
+                            {{ getUserStatus(user) }}
+                          </span>
+                        </td>
+                        <td> <select (change)="updateStatus(user, $event)">
+                              <option [value]="'true'" [selected]="user.isAdminApproved">Approved</option>
+                              <option [value]="'false'" [selected]="!user.isAdminApproved">Pending</option>
+                            </select></td>
+                            <td><td>
+                              <div class="dropdown" style="position: relative;">
+                                <button class="btn btn-sm btn-secondary" (click)="toggleDropdown(user.id)">
+                                  Documents
+                                </button>
+                                <ul *ngIf="isDropdownOpen(user.id)" class="dropdown-menu show" style="position: absolute; z-index: 1000;">
+                                  <!-- Membership -->
+                                  <li><h6 class="dropdown-header">Membership</h6></li>
+                                  <li>
+                                    <a href="#" (click)="viewMembership(user.carCode); $event.preventDefault()">
+                                      <i class="fas fa-eye me-2"></i> View Membership
+                                    </a>
+                                  </li>
+                                  <!-- Documents -->
+                                  <li><h6 class="dropdown-header">Documents</h6></li>
+                                  <li>
+                                    <a href="#" (click)="viewDocuments(user); $event.preventDefault()">
+                                      <i class="fas fa-file-alt me-2"></i> View Documents
+                                    </a>
+                                  </li>
+                                  <!-- Status Actions -->
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li *ngIf="!user.isAdminApproved && user.isOwnerAccepted">
+                                    <a href="#" class="dropdown-item text-success" (click)="approveUser(user); $event.preventDefault()">
+                                      <i class="fas fa-check me-2"></i> Approve User
+                                    </a>
+                                  </li>
+                            
+                                </ul>
+                              </div>
+                            </td>
+                            <td>
+                              <td>
+                                <button class="btn btn-sm btn-danger" (click)="deleteCar(user)">
+                                  <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                              </td>
+                              
+                            
+                            
+                      </tr>
+                      <tr *ngIf="filteredUsers.length === 0">
+                        <td colspan="8" class="text-center py-4">
+                          <i class="fas fa-search fa-2x text-muted mb-3"></i>
+                          <p>No users found. Try adjusting your search.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Register Car Modal -->
+<div class="modal fade" id="registerCarModal" tabindex="-1" aria-labelledby="registerCarModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerCarModalLabel">Register a New Car</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group mb-3">
+          <label for="carCode">Car Name</label>
+          <input [(ngModel)]="newCar.name" id="name" type="text" placeholder="Enter Car name" class="form-control" />
+        </div>
+      <div class="modal-body">
+        <div class="form-group mb-3">
+          <label for="carCode">Car Code</label>
+          <input [(ngModel)]="newCar.carCode" id="carCode" type="text" placeholder="Enter Car Code" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Select a Product</label>
+          <select [(ngModel)]="selectedProductId" name="product" class="form-control" required>
+            <option *ngFor="let product of products" [value]="product.id">{{ product.name }}</option>
+          </select>
+        </div>
+        
+
+        <div class="form-group mb-3">
+          <label>Location</label>
+          <div class="row">
+            <div class="col-md-6">
+              <input [(ngModel)]="newCar.latitude" type="number" placeholder="Latitude" class="form-control" />
+            </div>
+            <div class="col-md-6">
+              <input [(ngModel)]="newCar.longitude" type="number" placeholder="Longitude" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="expiry">Expiry Duration</label>
+          <select [(ngModel)]="newCar.expiryDuration" id="expiry" class="form-select">
+            <option value="6">6 Months</option>
+            <option value="9">9 Months</option>
+            <option value="12">1 Year</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="carImageUrl">Car Image URL</label>
+        <input [(ngModel)]="newCar.carImage" id="carImageUrl" type="url" placeholder="Enter image URL" class="form-control" />
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="registerNewCar()">Register Car</button>
+      </div>
+      <div class="card p-3">
+        <h5 class="mb-3">System Statistics</h5>
+        <canvas baseChart
+                [data]="barChartData"
+                [type]="barChartType"
+                [options]="barChartOptions">
+        </canvas>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

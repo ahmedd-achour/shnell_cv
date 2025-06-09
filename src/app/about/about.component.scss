@@ -1,0 +1,119 @@
+// About Page Styles
+
+// General Styles
+.about-page-wrapper {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.section-subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ff4a52;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+// Hero Section
+.about-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  padding-top: 15vh;
+  z-index: 2;
+}
+
+.hero-badges {
+  margin-top: 20px;
+}
+
+.hero-badges .badge {
+  margin-right: 10px;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 30px;
+}
+
+// Mission Section
+.mission-section {
+  padding: 80px 0;
+}
+
+.mission-content {
+  padding-right: 30px;
+}
+
+.mission-text {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.mission-stats {
+  margin-top: 40px;
+}
+
+.stat-item {
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ff4a52;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #777;
+}
+
+.mission-image-container {
+  position: relative;
+  padding: 20px;
+}
+
+.image-overlay-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #ff4a52;
+  color: white;}
