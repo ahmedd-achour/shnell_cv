@@ -78,7 +78,7 @@
         <span class="section-subtitle">Our Core Values</span>
         <h2 class="section-title">What Drives Us Every Day</h2>
       </div>
-      
+
       <div class="row g-4">
         <div class="col-md-4">
           <div class="value-card">
@@ -91,7 +91,7 @@
             </p>
           </div>
         </div>
-        
+
         <div class="col-md-4">
           <div class="value-card">
             <div class="value-icon">
@@ -103,7 +103,7 @@
             </p>
           </div>
         </div>
-        
+
         <div class="col-md-4">
           <div class="value-card">
             <div class="value-icon">
@@ -126,7 +126,7 @@
         <span class="section-subtitle">How It Works</span>
         <h2 class="section-title">Safety Made Simple</h2>
       </div>
-      
+
       <div class="timeline-container">
         <div class="timeline-item">
           <div class="timeline-number">1</div>
@@ -135,7 +135,7 @@
             <p>Sign up for a membership plan that fits your needs and download our mobile app.</p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-number">2</div>
           <div class="timeline-content">
@@ -143,7 +143,7 @@
             <p>Add your vehicle details, emergency contacts, and medical information for faster assistance.</p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-number">3</div>
           <div class="timeline-content">
@@ -151,7 +151,7 @@
             <p>Our system monitors your trips and automatically detects accidents or emergencies.</p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-number">4</div>
           <div class="timeline-content">
@@ -163,160 +163,279 @@
     </div>
   </section>
 
-  <!-- Team Section -->
-  <section class="team-section py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="section-subtitle">Our Team</span>
-        <h2 class="section-title">The Experts Behind Car Safety</h2>
-      </div>
-      
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="team-card">
-            <div class="team-image">
-              <img src="../../assets/car/images/alae.jpg" alt="Team Member" class="img-fluid">
-              <div class="team-social">
-            
-              </div>
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">Ala Eddine Souayah</h4>
-              <p class="team-position">CEO & Founder</p>
-              <p class="team-bio">Expert in logistics and emergency management with a background in healthcare crisis response.
-               </p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="team-card">
-            <div class="team-image">
-              <img src="../../assets/car/images/ahmed.jpg" alt="Team Member" class="img-fluid">
-              <div class="team-social">
-         
-              </div>
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">Ahmed Achour</h4>
-              <p class="team-position">CEO & Founder</p>
-              <p class="team-bio"> Former emergency response coordinator with 3+ years of experience in automotive safety systems.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4 col-md-6">
-          <div class="team-card">
-            <div class="team-image">
-              <img src="../../assets/car/images/besma.jpg" alt="Team Member" class="img-fluid">
-              <div class="team-social">
-    
-              </div>
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">Besma Rebhi</h4>
-              <p class="team-position">Technology Director</p>
-              <p class="team-bio">  PhD AI researcher and tech innovator specializing in IoT solutions and real-time emergency response systems.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="team-section py-5 bg-light">
+  <style>
+    .team-section .container {
+      background-color: rgba(255, 228, 196, 0.514);
+      padding: 30px;
+      border-radius: 16px;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 16px;
+      text-align: center;
+      padding: 25px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-image img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #e6e6e6;
+    }
+
+    .team-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .team-position {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #6c757d;
+      margin-bottom: 10px;
+    }
+
+    .team-bio {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    @media (min-width: 992px) {
+      .team-card {
+        padding: 30px 25px;
+      }
+      .team-image img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-subtitle">Our Team</span>
+      <h2 class="section-title">The Experts Behind Car Safety</h2>
     </div>
-  </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials-section py-5">
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="section-subtitle">Testimonials</span>
-        <h2 class="section-title">What Our Members Say</h2>
-      </div>
-      
-      <div class="testimonial-slider">
-
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "Following a major accident on the highway, I was amazed by Car Safety’s rapid intervention. Their swift arrival and flawless coordination with emergency responders made all the difference."            </p>
+    <div class="row g-4">
+      <!-- Member 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card h-100">
+          <div class="team-image">
+            <img src="../../assets/car/images/alae.jpg" alt="Ala Eddine Souayah">
           </div>
-          <div class="testimonial-author">
-            <img src="../../assets/car/images/hamza.png" alt="Testimonial Author" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5 class="author-name">hamza ben brahim</h5>
-              <p class="author-title">student</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-             " After a serious accident on the highway, Car Safety responded within minutes and worked seamlessly with emergency services — their quick action truly saved my life.   "         </p>
-          </div>
-          <div class="testimonial-author">
-            <img src="../../assets/car/images/hamadi3.jpg" alt="Testimonial Author" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5 class="author-name">hamadi aouini</h5>
-              <p class="author-title">student</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-           
-          </div>
-         
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p class="testimonial-text">
-              "When my car broke down in a remote area at night, Car Safety not only sent help quickly but also stayed on the line until assistance arrived. Exceptional service!"
+          <div class="team-info">
+            <h4 class="team-name">Ala Eddine Souayah</h4>
+            <p class="team-position">CEO &amp; Founder</p>
+            <p class="team-bio">
+              Expert in logistics and emergency management with a background in healthcare crisis response.
             </p>
           </div>
-          <div class="testimonial-author">
-            <img src="../../assets/car/images/raki2.jpg" alt="Testimonial Author" class="testimonial-avatar">
-            <div class="testimonial-info">
-              <h5 class="author-name">Raki Kaddousi</h5>
-              <p class="author-title">student</p>
-            </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card h-100">
+          <div class="team-image">
+            <img src="../../assets/car/images/ahmed1.jpg" alt="Ahmed Achour">
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Ahmed Achour</h4>
+            <p class="team-position">CEO &amp; Founder</p>
+            <p class="team-bio">
+              Former emergency response coordinator with 3+ years of experience in automotive safety systems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="team-card h-100">
+          <div class="team-image">
+            <img src="../../assets/car/images/besma.jpg" alt="Basma Rabhi">
+          </div>
+          <div class="team-info">
+            <h4 class="team-name">Basma Rabhi</h4>
+            <p class="team-position">Technology Director</p>
+            <p class="team-bio">
+              PhD AI researcher and tech innovator specializing in IoT solutions and real-time emergency response systems.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+  <!-- Testimonials Section -->
+ <section class="testimonials-section py-5">
+  <style>
+    .testimonial-slider {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background-color: #f8f9fa;
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .testimonial-avatar {
+      width: 100%;
+      max-width: 120px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .testimonial-rating {
+      color: #f5c518;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .testimonial-info .author-name {
+      font-weight: bold;
+      margin: 5px 0 0;
+    }
+
+    .testimonial-info .author-title {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (min-width: 768px) {
+      .testimonial-avatar {
+        max-width: 150px;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-subtitle">Testimonials</span>
+      <h2 class="section-title">What Our Collaborators Say</h2>
+    </div>
+
+    <div class="testimonial-slider">
+
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Following a major accident on the highway, I was amazed by Car Safety’s rapid intervention. Their swift arrival and flawless coordination with emergency responders made all the difference."
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="../../assets/car/images/jacer.jpeg" alt="Testimonial Author" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <h5 class="author-name">Jacer Khlifi</h5>
+            <p class="author-title">Collaborateur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "After a serious accident on the highway, Car Safety responded within minutes and worked seamlessly with emergency services — their quick action truly saved my life."
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="../../assets/car/images/hayder.jpeg" alt="Testimonial Author" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <h5 class="author-name">Hayder Laabidi</h5>
+            <p class="author-title">Collaborateur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 (empty testimonial text) -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Outstanding professionalism and support!"</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="../../assets/car/images/hamadi.jpg" alt="Testimonial Author" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <h5 class="author-name">Hammadi aouini</h5>
+            <p class="author-title">Client</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "When my car broke down in a remote area at night, Car Safety not only sent help quickly but also stayed on the line until assistance arrived. Exceptional service!"
+          </p>
+        </div>
+        <div class="testimonial-author">
+          <img src="../../assets/car/images/raki2.jpg" alt="Testimonial Author" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <h5 class="author-name">Raki Kaddousi</h5>
+            <p class="author-title">Student</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- Partners Section -->
- 
+
 
   <!-- CTA Section -->
   <section class="cta-section py-5">
