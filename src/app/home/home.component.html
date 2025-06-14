@@ -23,12 +23,12 @@
   <div class="container">
     <div class="form-container">
       <div class="form-wrapper">
-          
+
 
           <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
             <h2>Buy our product to be safe</h2>
 
-            
+
             <div class="form-group">
               <label for="pickupTime">Pick-up time</label>
               <input id="pickupTime" name="pickupTime" [(ngModel)]="formData.pickupTime" type="time" required />
@@ -58,7 +58,7 @@
           </form>
 
         </div>
-<!-- 
+<!--
           <div class="form-group">
             <label for="pickupTime">Pick-up time</label>
             <input id="pickupTime" name="pickupTime" type="time" required>
@@ -142,7 +142,7 @@
         <span class="subheading">Testimonials</span>
         <h2>Happy Clients</h2>
       </div>
-      
+
       <div class="testimonials-slider">
         <div class="testimonial-item">
           <div class="testimonial-content">
@@ -162,7 +162,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="testimonial-item">
           <div class="testimonial-content">
             <div class="rating">
@@ -183,7 +183,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="testimonial-item">
           <div class="testimonial-content">
             <div class="rating">
@@ -203,9 +203,23 @@
         </div>
       </div>
     </div>
-  </section>
-<app-footer></app-footer>
 
+  </section>
+
+<app-footer></app-footer>
+  <div *ngIf="showPopup" class="install-popup">
+  <div class="popup-content">
+    <img src="assets/carcare.png" alt="App Logo" width="60" />
+    <div>
+      <h4>Install Our Mobile App</h4>
+      <p>Get the full experience by installing our app.</p>
+    </div>
+    <div class="popup-buttons">
+      <button (click)="installApp()">Install</button>
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+</div>
 
 
 

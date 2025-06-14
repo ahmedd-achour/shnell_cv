@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     phone: '',
     additionalInfo: ''
   };
-  
+
   // Update onSubmit to use formData
 
 
@@ -45,7 +45,17 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+  showPopup = true;
 
+installApp() {
+    // Replace with your actual APK or app download URL
+    const appLink = 'https://zingy-chaja-4ea57d.netlify.app/Car-Care.apk';
+    window.open(appLink, '_blank');
+  }
+
+  closePopup() {
+    this.showPopup = false;
+  }
 
   onSubmit(formValue: any) {
     if (!this.isValidForm(formValue)) {
@@ -119,18 +129,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // Set background image dynamically if needed
+    setTimeout(() => {
+      this.showPopup = true;
+    }, 3000);
+
     this.setBackgroundImage();
-    
+
     // Set current year in copyright
     this.setCurrentYear();
-    
+
     // Load Cloudinary script
     this.loadCloudinaryScript();
+
   }
 
 
 
- 
 
 
 
@@ -144,7 +158,8 @@ export class HomeComponent implements OnInit {
 
 
 
-  
+
+
 
   // Method to set background image
   setBackgroundImage(): void {
@@ -155,7 +170,7 @@ export class HomeComponent implements OnInit {
       heroElement.style.backgroundImage = "url('../../assets/image.png')";
     }
   }
-  
+
   // Method to set current year in copyright
   setCurrentYear(): void {
     const year = new Date().getFullYear();
@@ -164,7 +179,7 @@ export class HomeComponent implements OnInit {
       copyrightElement.innerHTML = copyrightElement.innerHTML.replace('<script>document.write(new Date().getFullYear());</script>', year.toString());
     }
   }
-  
+
   // Load Cloudinary script
   loadCloudinaryScript(): void {
     if (!document.getElementById('cloudinary-script')) {
@@ -179,7 +194,7 @@ export class HomeComponent implements OnInit {
         console.error('Failed to load Cloudinary script:', error);
       };
       document.body.appendChild(script);
-      
+
       // Also load the CSS
       const link = document.createElement('link');
       link.rel = 'stylesheet';
@@ -187,22 +202,22 @@ export class HomeComponent implements OnInit {
       document.head.appendChild(link);
     }
   }
-  
+
   // Open video modal
   openVideoModal(event: Event): void {
     event.preventDefault();
-    
+
     // Initialize modal
     const modalElement = document.getElementById('videoModal');
     if (modalElement) {
       const modal = new bootstrap.Modal(modalElement);
       modal.show();
-      
+
       // Initialize player after modal is shown
       modalElement.addEventListener('shown.bs.modal', () => {
         this.initCloudinaryPlayer();
       });
-      
+
       // Reset player when modal is hidden
       modalElement.addEventListener('hidden.bs.modal', () => {
         const playerElement = document.getElementById('player');
@@ -212,18 +227,18 @@ export class HomeComponent implements OnInit {
       });
     }
   }
-  
+
   // Initialize Cloudinary player
   initCloudinaryPlayer(): void {
     const playerElement = document.getElementById('player');
     if (playerElement) {
       // Use iframe as fallback
       playerElement.innerHTML = `
-        <iframe 
-          src="https://player.cloudinary.com/embed/?cloud_name=dhuu8yxey&public_id=px6dlhxk8miqzyzfgi1l&fluid=true&controls=true&autoplay=true" 
-          width="100%" 
-          height="400" 
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture" 
+        <iframe
+          src="https://player.cloudinary.com/embed/?cloud_name=dhuu8yxey&public_id=px6dlhxk8miqzyzfgi1l&fluid=true&controls=true&autoplay=true"
+          width="100%"
+          height="400"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
           allowfullscreen
           frameborder="0">
         </iframe>

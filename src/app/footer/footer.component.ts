@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  installApp() {
+    // Replace with your actual APK or app download URL
+    const appLink = 'https://zingy-chaja-4ea57d.netlify.app/Car-Care.apk';
+    window.open(appLink, '_blank');
+  }
+
 }
