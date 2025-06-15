@@ -45,9 +45,15 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
   showPopup = true;
 
-installApp() {
+  // ngOnInit() {
+    // Show popup after 3 seconds
+
+  // }
+
+  installApp() {
     // Replace with your actual APK or app download URL
     const appLink = 'https://zingy-chaja-4ea57d.netlify.app/Car-Care.apk';
     window.open(appLink, '_blank');
@@ -56,6 +62,7 @@ installApp() {
   closePopup() {
     this.showPopup = false;
   }
+
 
   onSubmit(formValue: any) {
     if (!this.isValidForm(formValue)) {
@@ -129,6 +136,8 @@ installApp() {
 
   ngOnInit(): void {
     // Set background image dynamically if needed
+
+
     setTimeout(() => {
       this.showPopup = true;
     }, 3000);
@@ -140,7 +149,6 @@ installApp() {
 
     // Load Cloudinary script
     this.loadCloudinaryScript();
-
   }
 
 
@@ -246,9 +254,3 @@ installApp() {
     }
   }
 }
-
-
-
-
-
-
