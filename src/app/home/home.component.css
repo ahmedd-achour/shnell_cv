@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -555,90 +555,39 @@ body {
   .footer-column {
     width: 100%;
   }
-
-
 }
 
 
 .install-popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for better contrast */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth fade-in effect */
-}
-
-.install-popup.active {
-  opacity: 1;
-  visibility: visible;
 }
 
 .popup-content {
-  background: #ffffff;
-  padding: 2rem; /* Using rem for scalability */
-  border-radius: 16px; /* Slightly larger radius for modern look */
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
-  max-width: 320px; /* Slightly wider for better content fit */
-  width: 90%; /* Responsive width for smaller screens */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-  transform: scale(0.8); /* Initial scale for animation */
-  transition: transform 0.3s ease; /* Smooth scale animation */
-}
-
-.install-popup.active .popup-content {
-  transform: scale(1); /* Scale to normal when active */
+  max-width: 300px;
 }
 
 .popup-content img {
-  margin-bottom: 1.5rem; /* Consistent spacing with rem */
-  max-width: 100%; /* Ensure image is responsive */
-  height: auto;
+  margin-bottom: 20px;
 }
 
 .popup-content button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem; /* Slightly refined padding */
+  margin-top: 20px;
+  padding: 10px 20px;
   cursor: pointer;
   background: #01d28e;
   border: none;
-  color: #ffffff;
-  border-radius: 8px; /* Softer, modern corners */
-  font-size: 1rem; /* Consistent typography */
-  font-weight: 500; /* Medium weight for better readability */
-  transition: background 0.2s ease, transform 0.1s ease; /* Smooth hover effects */
+  color: white;
+  border-radius: 5px;
 }
 
-.popup-content button:hover {
-  background: #00b377; /* Darker shade on hover */
-  transform: translateY(-2px); /* Subtle lift effect */
-}
 
-.popup-content button:focus {
-  outline: 2px solid #01d28e; /* Accessible focus state */
-  outline-offset: 2px;
-}
-
-.popup-content button:active {
-  transform: translateY(0); /* Reset lift on click */
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-  .popup-content {
-    padding: 1.5rem;
-    max-width: 280px;
-  }
-
-  .popup-content button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-}

@@ -89,7 +89,19 @@
           </div>
         </form>
       </div> -->
-
+<div *ngIf="showPopup" class="install-popup">
+        <div class="popup-content">
+          <img src="assets/carcare2.png" alt="App Logo" width="60" />
+          <div>
+            <h4>Install Our Mobile App</h4>
+            <p>Get the full experience by installing our app.</p>
+          </div>
+          <div class="popup-buttons">
+            <button (click)="installApp()">Install</button>
+            <button (click)="closePopup()">Close</button>
+          </div>
+        </div>
+      </div>
       <div class="services-wrapper">
         <h3>Better way to protect your perfect cars</h3>
         <div class="services-row">
@@ -272,19 +284,7 @@ ce projet est une idée innovante garantir une couche de sécuritée  au voiture
   </section>
 
 <app-footer></app-footer>
-<div *ngIf="showPopup" class="install-popup">
-        <div class="popup-content">
-          <img src="assets/carcare.png" alt="App Logo" width="60" />
-          <div>
-            <h4>Install Our Mobile App</h4>
-            <p>Get the full experience by installing our app.</p>
-          </div>
-          <div class="popup-buttons">
-            <button (click)="installApp()">Install</button>
-            <button (click)="closePopup()">Close</button>
-          </div>
-        </div>
-      </div>
+
 
 
 

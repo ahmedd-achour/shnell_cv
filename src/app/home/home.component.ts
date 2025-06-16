@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  showPopup = true;
+  showPopup = false;
 
   // ngOnInit() {
     // Show popup after 3 seconds
